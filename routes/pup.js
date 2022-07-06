@@ -44,12 +44,8 @@ try {
 async function start() {
     browser = await launchBrowser();
     console.log('[LOG]: Browser up and running')
-    // browser.on('disconnected', launchBrowser)
-    // setTimeout(()=>{browser.disconnect()}, 3000)
-    // goojara_search("s")
-    // let movies = await goojara_search("spider");
-    // goojara_getmovie(movies[0].url)
 }
+
 /**
  * Launches a chromium browser
  * @returns {puppeteer.Browser} instance of puppeteer.Browser
@@ -69,23 +65,18 @@ const getFanFavourites = async () => {
     await page.goto('https://imdb.com')
 
     await page.waitForSelector(CONTAINER)
-    // await page.waitForSelector(streamingContainer)
     console.log('Found it');
     let result = [];
     try {
-        // [CONTAINER].map(async (con) => {
-        // console.log(streamingContainer)
         let div = await page.$(':root')
         let children = await (await div.getProperty('innerHTML')).jsonValue()
         let _document = cheerio.load(children)
         _document(CONTAINER).children().each(function (i, el) {
             let thumbnail = _document(this).children().eq(0).children().eq(1).children().eq(0).attr('src')
-            // console.log(_document(this).children().eq(0).children('img'))
             let rating = _document(this).children().eq(1).text()
             let title = _document(this).children().eq(2).text()
             let trailerLink = _document(this).children().eq(3).children().eq(1).children().eq(0).attr('href')
             result.push({ thumbnail, rating, title, trailerLink })
-            // })
         })
     } catch (e) {
         console.log(`[ERROR]: `, e)
@@ -94,6 +85,7 @@ const getFanFavourites = async () => {
     page.close()
     return result
 }
+
 
 /**
  * Search in IMDb's Library
@@ -116,7 +108,6 @@ const search = async (searchQuery, all = false) => {
         let thumbnail = $(this).children('.primary_photo').children().eq(0).children('img').attr('src')
         let title = $(this).children('.result_text').eq(0).children().eq(0).text()
         let url = $(this).children('.result_text').eq(0).children().eq(0).attr('href')
-        // let year = $(this).children('.result_text')[0].childNodes[2]
         result.push({ thumbnail, title, url: `https://imdb.com${url}`, from: "IMDB" })
     })
     return result
@@ -156,7 +147,6 @@ const goojara_search = async (searchQuery) => {
             })
         return data
     }, searchQuery)
-    // console.log(results)
     foundResult = true
     if (results === "No result") {
         console.log("No Results Found")
@@ -177,6 +167,8 @@ const goojara_search = async (searchQuery) => {
     await page.close();
     return results
 }
+
+
 /**
  * Get a movie's fullMovie video_URL, caption/description and posterURL
  * @param {string} movieURL A URL to the movie on the GoojaraSite
@@ -219,6 +211,8 @@ const goojara_getmovie = async (movieURL) => {
 
 
 }
+
+
 /**
  * Custom implementation of puppeteer.waitForSelector()
  * @param {puppeteer.Page} page
@@ -226,7 +220,6 @@ const goojara_getmovie = async (movieURL) => {
  * @param {Object} options 
  */
 async function customWaitForSelector(page, selector, options) {
-    let count = 0;
     return new Promise(async (resolve, reject) => {
         try {
             await page.waitForSelector(selector, options)
