@@ -1,3 +1,26 @@
+/**
+ * @typedef {Object} Movie
+ * @property {String} thumbnail - A link to its thumbnail
+ * @property {String} title The movie's full name
+ * @property {String} trailerLink Link to its trailer
+ * @property {String} url Link to watch it or to a page that will be scraped to find the actual movie
+ * @property {String} from Source either IMDb or Goojara
+  */
+
+/**
+* @typedef {Array.<Movie>} FanFavs
+* 
+*/
+
+/**
+ * @typedef {Object} Goojara_Movie_Info
+ * @property {String} videoURL
+ * @property {String} posterURL
+ * @property {String} description
+ */
+
+
+
 /* Clear the console */
 console.clear()
 /* Configure dotenv */
@@ -8,14 +31,16 @@ const cheerio = require('cheerio');
 const puppeteer = require('puppeteer');
 let browser;
 
-const { fanFavContainer: CONTAINER, streamingContainer } = require('./puppeteerConfig');
+const { fanFavContainer: CONTAINER } = require('./puppeteerConfig');
 
 try {
     start();
 } catch (e) {
     console.log('ERROR')
 }
-
+/**
+ * Start by Launching Browser
+ */
 async function start() {
     browser = await launchBrowser();
     console.log('[LOG]: Browser up and running')
@@ -25,12 +50,20 @@ async function start() {
     // let movies = await goojara_search("spider");
     // goojara_getmovie(movies[0].url)
 }
-
+/**
+ * Launches a chromium browser
+ * @returns {puppeteer.Browser} instance of puppeteer.Browser
+ */
 async function launchBrowser() {
-    // return await puppeteer.launch();
-    return await puppeteer.launch({ headless: false, defaultViewport: null });
+    return await puppeteer.launch();
+    // return await puppeteer.launch({ headless: false, defaultViewport: null });
 }
 
+
+/**
+ * Gets today's fan favorite movies and shows
+ * @returns {FanFavs} an Array of today's fan favorite shows and movies from IMDb
+ */
 const getFanFavourites = async () => {
     const page = await browser.newPage()
     await page.goto('https://imdb.com')
@@ -62,6 +95,12 @@ const getFanFavourites = async () => {
     return result
 }
 
+/**
+ * Search in IMDb's Library
+ * @param {String} searchQuery 
+ * @param {boolean} all Get all results or not
+ * @returns {Array.<Movie>}
+ */
 const search = async (searchQuery, all = false) => {
     searchQuery = 'q=' + searchQuery.toString() + `${all ? '&s=tt' : ''}`;
     let result = [];
@@ -85,6 +124,11 @@ const search = async (searchQuery, all = false) => {
 
 }
 
+/**
+ * Search in Goojara's Library
+ * @param {String} searchQuery 
+ * @returns {Array.<Movie>}
+ */
 const goojara_search = async (searchQuery) => {
     let foundResult = false;
     let time = 0;
@@ -134,8 +178,9 @@ const goojara_search = async (searchQuery) => {
     return results
 }
 /**
- * 
+ * Get a movie's fullMovie video_URL, caption/description and posterURL
  * @param {string} movieURL A URL to the movie on the GoojaraSite
+ * @returns {Goojara_Movie_Info}
  */
 const goojara_getmovie = async (movieURL) => {
     const page = await browser.newPage();
@@ -147,7 +192,7 @@ const goojara_getmovie = async (movieURL) => {
             console.log("wait timed out")
         }
     }
-    let {iframeURL, posterURL, text} = await page.evaluate(()=>{
+    let { iframeURL, posterURL, text } = await page.evaluate(() => {
         return {
             iframeURL: document.querySelector('#vidcon iframe').src,
             posterURL: document.querySelector('#poster img').src,
@@ -157,20 +202,20 @@ const goojara_getmovie = async (movieURL) => {
     console.log("Going to ", iframeURL)
     await page.goto(iframeURL)
     await customWaitForSelector(page, '#video-container a', {})
-    await page.evaluate(()=>{
+    await page.evaluate(() => {
         document.querySelector('#video-container a').click();
     })
 
     await customWaitForSelector(page, '#video-container video', {})
 
-    let videoURL = await page.evaluate(async ()=>{
+    let videoURL = await page.evaluate(async () => {
         console.log(document.querySelector('#video-container video').src)
-        await (new Promise((resolve)=> setTimeout(()=> resolve(), 1000)))
+        await (new Promise((resolve) => setTimeout(() => resolve(), 1000)))
         return document.querySelector('#video-container video').src;
     })
 
     console.log("VID_URL: ", videoURL);
-
+    return {videoURL, posterURL, description: text}
 
 
 }
@@ -195,5 +240,7 @@ async function customWaitForSelector(page, selector, options) {
 
 module.exports = {
     getFanFavourites,
-    search
+    search,
+    goojara_getmovie,
+    goojara_search
 }
