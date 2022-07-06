@@ -1,29 +1,55 @@
 const express = require('express')
 const app = express.Router()
+const jwt = require('jsonwebtoken')
 const User = require('../models/ml-user')
 
-app.post('/login', async (req, res)=>{
-    let {username, password} = req.body;
-    let foundUser = await User.findOne({username: username});
-    if(!foundUser) return res.json({code: "#NoSuchUser"});
+require('dotenv').config();
+
+app.post('/login', async (req, res) => {
+    let { username, password } = req.body;
+    let foundUser = await User.findOne({ username: username });
+    if (!foundUser) return res.json({ code: "#Error", message: "Incorrect username and/or password" })
     /* Compare passwords */
-    if(foundUser.password === password){
-        req.cookie('uid', foundUser._id);
-        return res.json({code: "#Success"})
-    }else{
-        return res.json({code: "#Error"})
+    if (foundUser.password === password) {
+        let token = jwt.sign({ userID: foundUser._id, username }, process.env.JWT_SECRET)
+        res.cookie('uid', token, {
+            maxAge: 2 * 60 * 60 * 1000
+        });
+        res.header('Access-Control-Allow-Credentials', 'true')
+        return res.json({ code: "#Success" })
+    } else {
+        return res.json({ code: "#Error", message: "Incorrect username and/or password" })
     }
 })
 
-app.post('/signup',  async(req, res)=>{
-    let {fullName, username, email, password} = req.body
-    let newUser = User({fullName, username, email, password})
-    try{
+app.get('/logout', (req, res) => {
+    res.cookie('uid', '', { maxAge: 10 })
+    res.send({ code: "#LoggedOut" })
+})
+
+app.get('/checkaccess', (req, res)=>{
+    res.json({code: "#AccessIsAvailable"})
+})
+
+app.post('/signup', async (req, res) => {
+    let { fullName, username, email, password } = req.body
+    let newUser = User({
+        fullName, username, email, password,
+        profiles: [
+            {
+                profileName: username,
+                favorites: [],
+                watched: [],
+                watchLater: []
+            }
+        ]
+    })
+    try {
         await newUser.save();
-        res.json({code: "#Success"})
-    }catch(e){
+        res.json({ code: "#Success" })
+    } catch (e) {
         // console.log(e)
-        res.json({code: "#Error", message: e.message})
+        res.json({ code: "#Error", message: e.message })
     }
 })
 
