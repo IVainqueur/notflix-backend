@@ -61,29 +61,33 @@ async function launchBrowser() {
  * @returns {FanFavs} an Array of today's fan favorite shows and movies from IMDb
  */
 const getFanFavourites = async () => {
-    const page = await browser.newPage()
-    await page.goto('https://imdb.com')
-
-    await page.waitForSelector(CONTAINER)
-    console.log('Found it');
-    let result = [];
     try {
-        let div = await page.$(':root')
-        let children = await (await div.getProperty('innerHTML')).jsonValue()
-        let _document = cheerio.load(children)
-        _document(CONTAINER).children().each(function (i, el) {
-            let thumbnail = _document(this).children().eq(0).children().eq(1).children().eq(0).attr('src')
-            let rating = _document(this).children().eq(1).text()
-            let title = _document(this).children().eq(2).text()
-            let trailerLink = _document(this).children().eq(3).children().eq(1).children().eq(0).attr('href')
-            result.push({ thumbnail, rating, title, trailerLink })
-        })
+        const page = await browser.newPage()
+        await page.goto('https://imdb.com')
+
+        await page.waitForSelector(CONTAINER)
+        console.log('Found it');
+        let result = [];
+        try {
+            let div = await page.$(':root')
+            let children = await (await div.getProperty('innerHTML')).jsonValue()
+            let _document = cheerio.load(children)
+            _document(CONTAINER).children().each(function (i, el) {
+                let thumbnail = _document(this).children().eq(0).children().eq(1).children().eq(0).attr('src')
+                let othersources = _document(this).children().eq(0).children().eq(1).children().eq(0).attr('srcset')
+                let rating = _document(this).children().eq(1).text()
+                let title = _document(this).children().eq(2).text()
+                let trailerLink = _document(this).children().eq(3).children().eq(1).children().eq(0).attr('href')
+                result.push({ thumbnail, othersources, rating, title, trailerLink, from: "IMDB" })
+            })
+        } catch (e) {
+            console.log(`[ERROR]: `, e)
+        }
+        page.close()
+        return result
     } catch (e) {
-        console.log(`[ERROR]: `, e)
+        return { code: "#Error", message: e.message }
     }
-    console.log(result)
-    page.close()
-    return result
 }
 
 
@@ -93,7 +97,7 @@ const getFanFavourites = async () => {
  * @param {boolean} all Get all results or not
  * @returns {Array.<Movie>}
  */
-const search = async (searchQuery, all = false) => {
+const imdb_search = async (searchQuery, all = false) => {
     searchQuery = 'q=' + searchQuery.toString() + `${all ? '&s=tt' : ''}`;
     let result = [];
 
@@ -104,9 +108,9 @@ const search = async (searchQuery, all = false) => {
     let root = await page.$(':root');
     root = await (await root.getProperty('innerHTML')).jsonValue();
     let $ = cheerio.load(root);
-    $('.findList tbody').eq(0).children().each(function (i, el) {
+    $('a[name=tt]').parent().next().children().eq(0).children().each(function (i, el) {
         let thumbnail = $(this).children('.primary_photo').children().eq(0).children('img').attr('src')
-        let title = $(this).children('.result_text').eq(0).children().eq(0).text()
+        let title = $(this).children('.result_text').eq(0).children().text().trim()
         let url = $(this).children('.result_text').eq(0).children().eq(0).attr('href')
         result.push({ thumbnail, title, url: `https://imdb.com${url}`, from: "IMDB" })
     })
@@ -150,18 +154,18 @@ const goojara_search = async (searchQuery) => {
     foundResult = true
     if (results === "No result") {
         console.log("No Results Found")
+        results = []
     } else if (results === "#Error") {
         return []
     } else {
         let $ = cheerio.load(results);
         results = []
         $(".lxbx ul").children().each(function () {
-            let link = $(this).html().match(/href="(.*)"(?=\>\<div)/)[1];
+            let [,link, type,] = $(this).html().match(/href="(.*)"(?=\>\<div class="(..)")/);
             let titleAndYear = $(this).children().eq(0).children().text();
             let title = $(this).children().eq(0).children().eq(0).children().eq(0).text();
             let year = titleAndYear.slice(title.length).trim().slice(1, -1);
-
-            results.push({ thumbnail: null, url: link, title, year, from: "GOOJARA" })
+            results.push({ thumbnail: null, url: link, title, year, from: "GOOJARA", type: type === 'im' ? 'movie' : 'series' })
         })
     }
     await page.close();
@@ -184,14 +188,15 @@ const goojara_getmovie = async (movieURL) => {
             console.log("wait timed out")
         }
     }
-    let { iframeURL, posterURL, text } = await page.evaluate(() => {
+    let { movieTitle, iframeURL, posterURL, text } = await page.evaluate(() => {
         return {
+            movieTitle: document.querySelector('.lxbx .marl h1').textContent,
             iframeURL: document.querySelector('#vidcon iframe').src,
             posterURL: document.querySelector('#poster img').src,
             text: document.querySelector('.fimm p').textContent
         }
     })
-    console.log("Going to ", iframeURL)
+    // console.log("Going to ", iframeURL)
     await page.goto(iframeURL)
     await customWaitForSelector(page, '#video-container a', {})
     await page.evaluate(() => {
@@ -201,13 +206,13 @@ const goojara_getmovie = async (movieURL) => {
     await customWaitForSelector(page, '#video-container video', {})
 
     let videoURL = await page.evaluate(async () => {
-        console.log(document.querySelector('#video-container video').src)
+        // console.log(document.querySelector('#video-container video').src)
         await (new Promise((resolve) => setTimeout(() => resolve(), 1000)))
         return document.querySelector('#video-container video').src;
     })
 
-    console.log("VID_URL: ", videoURL);
-    return {videoURL, posterURL, description: text}
+    // console.log("VID_URL: ", videoURL);
+    return { videoURL, posterURL, description: text, movieTitle }
 
 
 }
@@ -233,7 +238,7 @@ async function customWaitForSelector(page, selector, options) {
 
 module.exports = {
     getFanFavourites,
-    search,
+    imdb_search,
     goojara_getmovie,
     goojara_search
 }
