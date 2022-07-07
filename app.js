@@ -81,13 +81,17 @@ app.get('/find/:search/:all', async (req, res) => {
     let imdbResults = await imdb_search(searchQuery, all);
     let goojaraResults = await goojara_search(searchQuery);
 
+    if([imdbResults.code, goojaraResults.code].includes("#Error")) return res.json({code: "#Error", message: imdbResults.code ? imdbResults.message : goojaraResults.message})
+
     res.json({code: "#Success", data: [...imdbResults, ...goojaraResults]})
 })
 
 app.get('/watch/:service/:link', async (req,res)=>{
     let {service, link} = req.params
     link = `https://ww1.goojara.to/${link}`
-    res.json({code: "#Success", data: await goojara_getmovie(link)})
+    let result = await goojara_getmovie(link);
+    if(result.code === "#Error") return res.json({...result})
+    res.json({code: "#Success", data: result})
 })
 const PORT = process.env.PORT | 8080
 app.listen(PORT, () => {
