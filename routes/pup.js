@@ -20,7 +20,6 @@
  */
 
 
-
 /* Clear the console */
 console.clear()
 /* Configure dotenv */
