@@ -24,7 +24,7 @@ app.use(cookieParser());
 app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", req.get('origin'))
     res.header('Access-Control-Allow-Credentials', 'true')
-    res.header('Access-Control-Allow-Headers', 'Content-Type')
+    res.header('Access-Control-Allow-Headers', 'Content-Type,Set-Cookie')
 
     /* Check if the route needs the token */
     let isOKToContinue = false;
