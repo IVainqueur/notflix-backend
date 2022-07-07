@@ -97,7 +97,7 @@ app.get('/watch/:service/:link', async (req,res)=>{
     if(result.code === "#Error") return res.json({...result})
     res.json({code: "#Success", data: result})
 })
-const PORT = process.env.PORT | 8080
+const PORT = process.env.PORT || 8080
 app.listen(PORT, () => {
     console.log(`\x1B[1m\x1B[33m[LOG]: Server running at PORT ${PORT}\x1B[0m`)
 });
