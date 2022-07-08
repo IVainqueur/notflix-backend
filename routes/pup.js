@@ -136,10 +136,13 @@ const goojara_search = async (searchQuery) => {
     let foundResult = false;
     try {
         let time = 0;
-        console.log("Searching...\t taking 0s")
+        // console.log("Searching...\t taking 0s")
         let intervalHandler = setInterval(() => {
-            if (foundResult) return clearInterval(intervalHandler)
-            console.log(`\x1B[A\b\bSearching...\t taking ${Math.floor(time)}s`)
+            if (foundResult) {
+                console.log("Searching took ",Math.floor(time)," seconds")
+                return clearInterval(intervalHandler)
+            }
+            // console.log(`\x1B[A\b\bSearching...\t taking ${Math.floor(time)}s`)
             time += 0.5
         }, 500)
         const page = await browser.newPage();
@@ -233,6 +236,16 @@ const goojara_getmovie = async (movieURL) => {
 
 
     } catch (e) {
+        return { code: "#Error", message: e.message }
+    }
+}
+
+const goojara_getseries = async (seriesURL) => {
+    try{
+        const page = await browser.newPage();
+        await page.goto(seriesURL);
+
+    }catch(e){
         return { code: "#Error", message: e.message }
     }
 }
