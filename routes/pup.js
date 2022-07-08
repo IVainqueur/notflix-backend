@@ -157,7 +157,7 @@ const goojara_search = async (searchQuery) => {
             let query = new FormData()
             query.append('q', _searchQuery)
             let data;
-            await fetch('https://www.goojara.to/xhrr.php', {
+            await fetch('/xhrr.php', {
                 method: "POST",
                 body: query
             })
