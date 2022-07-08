@@ -155,7 +155,7 @@ const goojara_search = async (searchQuery) => {
             let query = new FormData()
             query.append('q', _searchQuery)
             let data;
-            await fetch('https://goojara.to/xhrr.php', {
+            await fetch('https://www.goojara.to/xhrr.php', {
                 method: "POST",
                 body: query
             })
@@ -167,7 +167,7 @@ const goojara_search = async (searchQuery) => {
             return data
         }, searchQuery)
         foundResult = true
-        console.log("FOund results, ",results)
+        console.log("FOund results, ", (typeof results != 'string') ? results: 'string')
         if (results === "No result") {
             console.log("No Results Found")
             results = []

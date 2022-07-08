@@ -5,6 +5,8 @@ const User = require('../models/ml-user')
 
 require('dotenv').config();
 
+console.log(process.env.NODE_ENV)
+
 app.post('/login', async (req, res) => {
     let { username, password } = req.body;
     let foundUser = await User.findOne({ username: username });
