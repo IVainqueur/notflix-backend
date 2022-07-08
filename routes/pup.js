@@ -185,6 +185,7 @@ const goojara_search = async (searchQuery) => {
         return results
     } catch (e) {
         foundResult = true
+        console.log("GOOJARA ERROR: ", e)
         return { code: "#Error", message: e.message }
     }
 }
