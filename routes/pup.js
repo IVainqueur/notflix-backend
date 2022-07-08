@@ -162,7 +162,7 @@ const goojara_search = async (searchQuery) => {
                 .then(res => res.text())
                 .then(res => { data = res })
                 .catch(e => {
-                    data = "#Error"
+                    data = {code: "#Error", message: e.message}
                 })
             return data
         }, searchQuery)
@@ -171,7 +171,7 @@ const goojara_search = async (searchQuery) => {
         if (results === "No result") {
             console.log("No Results Found")
             results = []
-        } else if (results === "#Error") {
+        } else if (results.code === "#Error") {
             return []
         } else {
             let $ = cheerio.load(results);
