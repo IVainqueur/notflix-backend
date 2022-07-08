@@ -15,7 +15,7 @@ app.post('/login', async (req, res) => {
         res.cookie('uid', token, {
             maxAge: 2 * 60 * 60 * 1000,
             sameSite: 'none',
-            secure: false
+            secure: true
         });
         res.header('Access-Control-Allow-Credentials', 'true')
         return res.json({ code: "#Success" })
