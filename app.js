@@ -82,8 +82,10 @@ app.get('/fan-favorites', async (req, res) => {
 app.get('/find/:search/:all', async (req, res) => {
     let searchQuery = req.params.search;
     let all = req.params.all === 'true' ? true : false;
-    let imdbResults = await imdb_search(searchQuery, all);
     let goojaraResults = await goojara_search(searchQuery);
+    let imdbResults = await imdb_search(searchQuery, all);
+
+    console.log((Array.isArray(imdbResults) ? imdbResults.length : ''), (Array.isArray(goojaraResults) ? goojaraResults.length : ''))
 
     if([imdbResults.code, goojaraResults.code].includes("#Error")) return res.json({code: "#Error", message: imdbResults.code ? imdbResults.message : goojaraResults.message})
 
