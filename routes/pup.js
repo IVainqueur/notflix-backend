@@ -145,8 +145,11 @@ const goojara_search = async (searchQuery) => {
             // console.log(`\x1B[A\b\bSearching...\t taking ${Math.floor(time)}s`)
             time += 0.5
         }, 500)
+        console.log("NEW PAGE")
         const page = await browser.newPage();
+        console.log("Going to GOOJARA")
         await page.goto('https://goojara.to');
+        console.log("Evaluating...")
         let results = await page.evaluate(async (_searchQuery) => {
             console.log(_searchQuery)
             let query = new FormData()
@@ -164,6 +167,7 @@ const goojara_search = async (searchQuery) => {
             return data
         }, searchQuery)
         foundResult = true
+        console.log("FOund results, ",results)
         if (results === "No result") {
             console.log("No Results Found")
             results = []
