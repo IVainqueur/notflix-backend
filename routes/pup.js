@@ -162,7 +162,7 @@ const goojara_search = async (searchQuery) => {
                 .then(res => res.text())
                 .then(res => { data = res })
                 .catch(e => {
-                    data = {code: "#Error", message: e}
+                    data = {code: "#Error", error: {...e}}
                 })
             return data
         }, searchQuery)
