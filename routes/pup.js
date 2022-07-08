@@ -143,7 +143,7 @@ const goojara_search = async (searchQuery) => {
             time += 0.5
         }, 500)
         const page = await browser.newPage();
-        await page.goto('http://goojara.to');
+        await page.goto('https://goojara.to');
         let results = await page.evaluate(async (_searchQuery) => {
             console.log(_searchQuery)
             let query = new FormData()
@@ -177,6 +177,7 @@ const goojara_search = async (searchQuery) => {
                 results.push({ thumbnail: null, url: link, title, year, from: "GOOJARA", type: type === 'im' ? 'movie' : 'series' })
             })
         }
+        console.log("Found the GOOJARA Results")
         await page.close();
         return results
     } catch (e) {
