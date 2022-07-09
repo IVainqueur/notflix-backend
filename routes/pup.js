@@ -29,6 +29,7 @@ require('dotenv').config()
 const cheerio = require('cheerio');
 const puppeteer = require('puppeteer');
 let browser;
+let context;
 
 const { fanFavContainer: CONTAINER } = require('./puppeteerConfig');
 const { addToLogs } = require('../oneliners');
@@ -43,6 +44,7 @@ try {
  */
 async function start() {
     browser = await launchBrowser();
+    context  = await browser.createIncognitoBrowserContext()
     console.log('[LOG]: Browser up and running')
 }
 
@@ -147,7 +149,7 @@ const goojara_search = async (searchQuery) => {
             time += 0.5
         }, 500)
         console.log("NEW PAGE")
-        const page = await browser.newPage();
+        const page = await context.newPage();
         await page.setCacheEnabled(false)
         console.log("Going to GOOJARA")
         await page.setBypassCSP(true)
