@@ -151,7 +151,9 @@ const goojara_search = async (searchQuery) => {
         const page = await browser.newPage();
         console.log("Going to GOOJARA")
         await page.setBypassCSP(true)
-        await page.goto('https://goojara.to');
+        await page.goto('https://goojara.to',{
+            waitUntil: "networkidle2",
+        });
         console.log("Evaluating...")
         
         let results = await page.evaluate(async (_searchQuery) => {

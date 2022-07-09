@@ -1,0 +1,142 @@
+09/07/2022, 20:01:39
+ SearchResults
+=================
+GOOJARA:
+[
+    {
+        "thumbnail": null,
+        "url": "https://ww1.goojara.to/tKZ98y",
+        "title": "Kung Fu Panda: Legends of Awesomeness",
+        "year": "2011",
+        "from": "GOOJARA",
+        "type": "series"
+    },
+    {
+        "thumbnail": null,
+        "url": "https://ww1.goojara.to/m3jPWY",
+        "title": "Kung Fu Panda",
+        "year": "2008",
+        "from": "GOOJARA",
+        "type": "movie"
+    },
+    {
+        "thumbnail": null,
+        "url": "https://ww1.goojara.to/m38pvE",
+        "title": "Kung Fu Panda 2",
+        "year": "2011",
+        "from": "GOOJARA",
+        "type": "movie"
+    },
+    {
+        "thumbnail": null,
+        "url": "https://ww1.goojara.to/m37xg8",
+        "title": "The Amazing Panda Adventure",
+        "year": "1995",
+        "from": "GOOJARA",
+        "type": "movie"
+    },
+    {
+        "thumbnail": null,
+        "url": "https://ww1.goojara.to/mRzkME",
+        "title": "Kung Fu Panda: Secrets of the Masters",
+        "year": "2011",
+        "from": "GOOJARA",
+        "type": "movie"
+    },
+    {
+        "thumbnail": null,
+        "url": "https://ww1.goojara.to/m5Qggr",
+        "title": "Kung Fu Panda 3",
+        "year": "2016",
+        "from": "GOOJARA",
+        "type": "movie"
+    }
+]
+ IMDB: 
+[
+    {
+        "thumbnail": "https://m.media-amazon.com/images/M/MV5BMTA5NTMxMjIzMDZeQTJeQWpwZ15BbWU3MDE3NzU2NTI@._V1_UX32_CR0,0,32,44_AL_.jpg",
+        "title": "The Watch",
+        "url": "https://imdb.com/title/tt1166118/?ref_=fn_al_tt_1",
+        "from": "IMDB"
+    },
+    {
+        "thumbnail": "https://m.media-amazon.com/images/M/MV5BZjAxY2UzNTItYmU0MC00NDVkLTliMzctNjRiNzU0MDk2MzQ1XkEyXkFqcGdeQXVyNjM1NDQwNzc@._V1_UY44_CR0,0,32,44_AL_.jpg",
+        "title": "Panda",
+        "url": "https://imdb.com/title/tt5652562/?ref_=fn_al_tt_2",
+        "from": "IMDB"
+    }
+]
+=============
+=============
+09/07/2022, 20:01:46
+ SearchResults
+=================
+GOOJARA:
+[
+    {
+        "thumbnail": null,
+        "url": "https://ww1.goojara.to/tKZ98y",
+        "title": "Kung Fu Panda: Legends of Awesomeness",
+        "year": "2011",
+        "from": "GOOJARA",
+        "type": "series"
+    },
+    {
+        "thumbnail": null,
+        "url": "https://ww1.goojara.to/m3jPWY",
+        "title": "Kung Fu Panda",
+        "year": "2008",
+        "from": "GOOJARA",
+        "type": "movie"
+    },
+    {
+        "thumbnail": null,
+        "url": "https://ww1.goojara.to/m38pvE",
+        "title": "Kung Fu Panda 2",
+        "year": "2011",
+        "from": "GOOJARA",
+        "type": "movie"
+    },
+    {
+        "thumbnail": null,
+        "url": "https://ww1.goojara.to/m37xg8",
+        "title": "The Amazing Panda Adventure",
+        "year": "1995",
+        "from": "GOOJARA",
+        "type": "movie"
+    },
+    {
+        "thumbnail": null,
+        "url": "https://ww1.goojara.to/mRzkME",
+        "title": "Kung Fu Panda: Secrets of the Masters",
+        "year": "2011",
+        "from": "GOOJARA",
+        "type": "movie"
+    },
+    {
+        "thumbnail": null,
+        "url": "https://ww1.goojara.to/m5Qggr",
+        "title": "Kung Fu Panda 3",
+        "year": "2016",
+        "from": "GOOJARA",
+        "type": "movie"
+    }
+]
+ IMDB: 
+[
+    {
+        "thumbnail": "https://m.media-amazon.com/images/M/MV5BMTA5NTMxMjIzMDZeQTJeQWpwZ15BbWU3MDE3NzU2NTI@._V1_UX32_CR0,0,32,44_AL_.jpg",
+        "title": "The Watch",
+        "url": "https://imdb.com/title/tt1166118/?ref_=fn_al_tt_1",
+        "from": "IMDB"
+    },
+    {
+        "thumbnail": "https://m.media-amazon.com/images/M/MV5BZjAxY2UzNTItYmU0MC00NDVkLTliMzctNjRiNzU0MDk2MzQ1XkEyXkFqcGdeQXVyNjM1NDQwNzc@._V1_UY44_CR0,0,32,44_AL_.jpg",
+        "title": "Panda",
+        "url": "https://imdb.com/title/tt5652562/?ref_=fn_al_tt_2",
+        "from": "IMDB"
+    }
+]
+=============
+=============
