@@ -44,7 +44,7 @@ try {
  */
 async function start() {
     browser = await launchBrowser();
-    context  = await browser.createIncognitoBrowserContext()
+    context = await browser.createIncognitoBrowserContext()
     console.log('[LOG]: Browser up and running')
 }
 
@@ -53,13 +53,13 @@ async function start() {
  * @returns {puppeteer.Browser} instance of puppeteer.Browser
  */
 async function launchBrowser() {
-    return await puppeteer.launch({
-        args: [
-            '--no-sandbox',
-            '--disable-setuid-sandbox'
-        ]
-    });
-    // return await puppeteer.launch({ headless: false, defaultViewport: null });
+    // return await puppeteer.launch({
+    //     args: [
+    //         '--no-sandbox',
+    //         '--disable-setuid-sandbox'
+    //     ]
+    // });
+    return await puppeteer.launch({ headless: false, defaultViewport: null });
 }
 
 
@@ -142,7 +142,7 @@ const goojara_search = async (searchQuery) => {
         // console.log("Searching...\t taking 0s")
         let intervalHandler = setInterval(() => {
             if (foundResult) {
-                console.log("Searching took ",Math.floor(time)," seconds")
+                console.log("Searching took ", Math.floor(time), " seconds")
                 return clearInterval(intervalHandler)
             }
             // console.log(`\x1B[A\b\bSearching...\t taking ${Math.floor(time)}s`)
@@ -153,11 +153,11 @@ const goojara_search = async (searchQuery) => {
         await page.setCacheEnabled(false)
         console.log("Going to GOOJARA")
         await page.setBypassCSP(true)
-        await page.goto('https://goojara.to',{
+        await page.goto('https://goojara.to', {
             waitUntil: "networkidle2",
         });
         console.log("Evaluating...")
-        
+
         let results = await page.evaluate(async (_searchQuery) => {
             console.log(_searchQuery)
             let query = new FormData()
@@ -170,15 +170,15 @@ const goojara_search = async (searchQuery) => {
                 .then(res => res.text())
                 .then(res => { data = res })
                 .catch(e => {
-                    data = {code: "#Error", error: e.stack}
+                    data = { code: "#Error", error: e.stack }
                 })
             return data
         }, searchQuery)
         foundResult = true
-        console.log("FOund results, ", (typeof results != 'string') ? results: 'string')
+        console.log("FOund results, ", (typeof results != 'string') ? results : 'string')
         if (results === "No result") {
             console.log("No Results Found")
-            results = {code: "#SomeError", message: "No Results"}
+            results = { code: "#SomeError", message: "No Results" }
         } else if (results.code === "#Error") {
             console.log('some error occured')
             results.code = "#SomeError"
@@ -212,7 +212,7 @@ const goojara_search = async (searchQuery) => {
  * @param {string} movieURL A URL to the movie on the GoojaraSite
  * @returns {Goojara_Movie_Info}
  */
-const goojara_getmovie = async (movieURL) => {
+async function goojara_getmovie(movieURL) {
     try {
         const page = await browser.newPage();
         await page.goto(movieURL);
@@ -257,12 +257,51 @@ const goojara_getmovie = async (movieURL) => {
     }
 }
 
-const goojara_getseries = async (seriesURL) => {
-    try{
+async function goojara_getseries(seriesURL) {
+    try {
+        console.log("Searching for ", seriesURL)
         const page = await browser.newPage();
         await page.goto(seriesURL);
+        let result = await page.evaluate(async (URL) => {
+            console.log("TEST")
+            let seasonBTNs = document.querySelector('.dflex').children;
+            let seasons = Array.from(seasonBTNs).map(s => s.textContent);
+            let seriesID = document.querySelector('#seon').getAttribute('data-id')
+            console.log('reached here')
+            let episodes = []
+            for (let season of seasons) {
+                try {
+                    let query = new FormData()
+                    query.append('s', season)
+                    query.append('t', seriesID)
+                    let data = await fetch('/xhrc.php', { method: 'POST', body: query })
+                    data = await data.text()
+                    let div = Object.assign(document.createElement('div'), { innerHTML: data })
+                    let results = []
+                    for (let child of div.children) {
+                        results.push({
+                            episodeNumber: child.querySelector('.seep .sea').textContent,
+                            episodeTitle: child.querySelector('.snfo h1').textContent,
+                            episodeDescription: child.querySelector('.snfo p').textContent,
+                            episodeReleaseData: child.querySelector('.snfo .date').textContent,
+                            episodeURL: child.querySelector('.snfo h1 a').href
+                        })
+                    }
+                    episodes.push ({
+                        season,
+                        episodes: results
+                    })
 
-    }catch(e){
+                } catch (e) {
+                    episodes.push({})
+                }
+
+            }
+            return episodes
+
+        }, seriesURL)
+        return result
+    } catch (e) {
         return { code: "#Error", message: e.message }
     }
 }
@@ -287,7 +326,7 @@ async function customWaitForSelector(page, selector, options) {
 }
 
 // function addToLogs (data){
-    
+
 //     console.log("Adding to LOGS", data)
 //     fs.appendFile(`${__dirname}/logs.txt`, data, (err)=>{
 //         if(err) return console.log("\x1B[1m\x1B[31m[ERROR] Error Appending To LOGS\x1B[0m", err);
