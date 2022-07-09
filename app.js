@@ -97,7 +97,7 @@ app.get('/find/:search/:all', async (req, res) => {
 
     let toLog = ((new Date()).toLocaleString('en-UK', {timeZone: 'Africa/Harare'}))
     toLog += '\n SearchResults\n=================\nGOOJARA:\n'
-    toLog = typeof goojaraResults === 'object' ? JSON.stringify(goojaraResults, null, 4) : goojaraResults
+    toLog += typeof goojaraResults === 'object' ? JSON.stringify(goojaraResults, null, 4) : goojaraResults
     toLog += '\n IMDB: \n'
     toLog += typeof imdbResults === 'object' ? JSON.stringify(imdbResults, null, 4) : imdbResults
     toLog += '\n=============\n=============\n'

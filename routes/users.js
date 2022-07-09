@@ -16,8 +16,8 @@ app.post('/login', async (req, res) => {
         let token = jwt.sign({ userID: foundUser._id, username }, process.env.JWT_SECRET)
         res.cookie('uid', token, {
             maxAge: 2 * 60 * 60 * 1000,
-            sameSite: 'none',
-            secure: true
+            sameSite: 'lax',
+            // secure: true
         });
         res.header('Access-Control-Allow-Credentials', 'true')
         return res.json({ code: "#Success" })
