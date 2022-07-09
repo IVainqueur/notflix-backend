@@ -28,6 +28,7 @@ require('dotenv').config()
 
 const cheerio = require('cheerio');
 const puppeteer = require('puppeteer');
+const { addToLogs } = require('../app');
 let browser;
 
 const { fanFavContainer: CONTAINER } = require('./puppeteerConfig');
@@ -174,8 +175,12 @@ const goojara_search = async (searchQuery) => {
             console.log("No Results Found")
             results = {code: "#SomeError", message: "No Results"}
         } else if (results.code === "#Error") {
+            console.log('some error occured')
             results.code = "#SomeError"
         } else {
+            let toLog = `GOOJARA STRING RECEIVED \n`;
+            toLog += results;
+            addToLogs(toLog);
             let $ = cheerio.load(results);
             results = []
             $(".lxbx ul").children().each(function () {
