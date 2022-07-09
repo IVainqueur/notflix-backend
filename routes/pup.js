@@ -283,6 +283,7 @@ async function customWaitForSelector(page, selector, options) {
 }
 
 function addToLogs (data){
+    console.log("Adding to LOGS")
     fs.appendFile(`${__dirname}/logs.txt`, data, (err)=>{
         if(err) return console.log("\x1B[1m\x1B[31m[ERROR] Error Appending To LOGS\x1B[0m", err);
 
