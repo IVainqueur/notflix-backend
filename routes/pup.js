@@ -28,11 +28,10 @@ require('dotenv').config()
 
 const cheerio = require('cheerio');
 const puppeteer = require('puppeteer');
-// const { addToLogs } = require('../app');
-const fs = require('fs')
 let browser;
 
 const { fanFavContainer: CONTAINER } = require('./puppeteerConfig');
+const { addToLogs } = require('../oneliners');
 
 try {
     start();
@@ -149,6 +148,7 @@ const goojara_search = async (searchQuery) => {
         }, 500)
         console.log("NEW PAGE")
         const page = await browser.newPage();
+        await page.setCacheEnabled(false)
         console.log("Going to GOOJARA")
         await page.setBypassCSP(true)
         await page.goto('https://goojara.to',{
@@ -284,13 +284,14 @@ async function customWaitForSelector(page, selector, options) {
     })
 }
 
-function addToLogs (data){
-    console.log("Adding to LOGS", data)
-    fs.appendFile(`${__dirname}/logs.txt`, data, (err)=>{
-        if(err) return console.log("\x1B[1m\x1B[31m[ERROR] Error Appending To LOGS\x1B[0m", err);
+// function addToLogs (data){
+    
+//     console.log("Adding to LOGS", data)
+//     fs.appendFile(`${__dirname}/logs.txt`, data, (err)=>{
+//         if(err) return console.log("\x1B[1m\x1B[31m[ERROR] Error Appending To LOGS\x1B[0m", err);
 
-    })
-}
+//     })
+// }
 
 module.exports = {
     getFanFavourites,

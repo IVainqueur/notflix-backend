@@ -4,10 +4,10 @@
 * a new object from the given one that only contains the needed keys
 
 */
-function _pick(needed, theObj){
+function _pick(needed, theObj) {
     let newObj = {}
-    Object.keys(theObj).forEach((key, i)=>{
-        if(needed.includes(key)){
+    Object.keys(theObj).forEach((key, i) => {
+        if (needed.includes(key)) {
             newObj[key] = theObj[key]
         }
     })
@@ -20,10 +20,10 @@ function _pick(needed, theObj){
 
 */
 
-function _remove(unneeded, theObj){
+function _remove(unneeded, theObj) {
     let newObj = {}
-    Object.keys(theObj).forEach((key, i)=>{
-        if(!unneeded.includes(key)){
+    Object.keys(theObj).forEach((key, i) => {
+        if (!unneeded.includes(key)) {
             newObj[key] = theObj[key]
         }
     })
@@ -36,10 +36,10 @@ function _remove(unneeded, theObj){
 
 */
 
-function arr_remove(needed, theObj){
+function arr_remove(needed, theObj) {
     let newObj = []
-    theObj.forEach((value, i)=>{
-        if(!needed.includes(value)){
+    theObj.forEach((value, i) => {
+        if (!needed.includes(value)) {
             newObj.push(value)
         }
     })
@@ -47,6 +47,15 @@ function arr_remove(needed, theObj){
 }
 
 
+function addToLogs(data) {
+    const fs = require('fs')
+    fs.appendFile('./logs.txt', data, (err) => {
+        if (err) return console.log("\x1B[1m\x1B[31m[ERROR] Error Appending To LOGS\x1B[0m");
+
+    })
+}
+
 module.exports._pick = _pick
 module.exports._remove = _remove
 module.exports.arr_remove = arr_remove
+module.exports.addToLogs = addToLogs

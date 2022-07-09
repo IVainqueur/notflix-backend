@@ -127,5 +127,3 @@ function addToLogs (data){
 
     })
 }
-
-module.exports = {addToLogs}
