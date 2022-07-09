@@ -9,6 +9,8 @@ const jwt = require('jsonwebtoken')
 const URL_Whitelist = ['/user/login', '/user/logout', '/user/signup', '/'];
 const Daily = require('./models/ml-daily');
 
+const fs = require('fs')
+
 
 /* Connect to DB */
 mongo.connect(process.env.MONGO_URI, (err) => {
@@ -89,6 +91,14 @@ app.get('/find/:search/:all', async (req, res) => {
 
     if([imdbResults.code, goojaraResults.code].includes("#Error")) return res.json({code: "#Error", message: imdbResults.code ? imdbResults.message : goojaraResults.message})
 
+    let toLog = ((new Date()).toLocaleString('en-UK', {timeZone: 'Africa/Harare'}))
+    toLog += '\n SearchResults\n=================\nGOOJARA:\n'
+    toLog = typeof goojaraResults === 'object' ? JSON.stringify(goojaraResults, null, 4) : goojaraResults
+    toLog += '\n IMDB: \n'
+    toLog += typeof imdbResults === 'object' ? JSON.stringify(imdbResults, null, 4) : imdbResults
+    toLog += '\n=============\n=============\n'
+    addToLogs(toLog)
+
     res.json({code: "#Success", data: [...imdbResults, ...goojaraResults]})
 })
 
@@ -99,7 +109,15 @@ app.get('/watch/:service/:link', async (req,res)=>{
     if(result.code === "#Error") return res.json({...result})
     res.json({code: "#Success", data: result})
 })
+
 const PORT = process.env.PORT || 8080
 app.listen(PORT, () => {
     console.log(`\x1B[1m\x1B[33m[LOG]: Server running at PORT ${PORT}\x1B[0m`)
 });
+
+function addToLogs (data){
+    fs.appendFile('./logs.txt', data, (err)=>{
+        if(err) return console.log("\x1B[1m\x1B[31m[ERROR] Error Appending To LOGS\x1B[0m");
+
+    })
+}
