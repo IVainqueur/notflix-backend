@@ -6,7 +6,7 @@ const mongo = require('mongoose')
 const { getFanFavourites, imdb_search, goojara_search, goojara_getmovie } = require('./routes/pup')
 const cookieParser = require('cookie-parser')
 const jwt = require('jsonwebtoken')
-const URL_Whitelist = ['/user/login', '/user/logout', '/user/signup', '/'];
+const URL_Whitelist = ['/user/login', '/user/logout', '/user/signup', '/', '/getLogs'];
 const Daily = require('./models/ml-daily');
 
 const fs = require('fs')
@@ -49,6 +49,10 @@ app.use('/user', require('./routes/users'))
 
 app.get('/', (req, res)=>{
     res.send("Up and Running")
+})
+
+app.get('/getLogs', (req, res)=>{
+    res.sendFile(__dirname + '/logs.txt')
 })
 
 app.get('/fan-favorites', async (req, res) => {
