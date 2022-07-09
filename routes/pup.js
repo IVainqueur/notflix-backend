@@ -28,7 +28,8 @@ require('dotenv').config()
 
 const cheerio = require('cheerio');
 const puppeteer = require('puppeteer');
-const { addToLogs } = require('../app');
+// const { addToLogs } = require('../app');
+const fs = require('fs')
 let browser;
 
 const { fanFavContainer: CONTAINER } = require('./puppeteerConfig');
@@ -278,6 +279,13 @@ async function customWaitForSelector(page, selector, options) {
             reject(e)
             console.log("\x1B[41m\x1B[37m", e, "\x1B[0m")
         }
+    })
+}
+
+function addToLogs (data){
+    fs.appendFile('../logs.txt', data, (err)=>{
+        if(err) return console.log("\x1B[1m\x1B[31m[ERROR] Error Appending To LOGS\x1B[0m");
+
     })
 }
 
