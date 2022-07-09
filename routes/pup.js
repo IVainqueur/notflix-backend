@@ -172,9 +172,9 @@ const goojara_search = async (searchQuery) => {
         console.log("FOund results, ", (typeof results != 'string') ? results: 'string')
         if (results === "No result") {
             console.log("No Results Found")
-            results = []
-        } else if (results.code === "#Error") {
-            return []
+            results = {code: "#Error", message: "No Results"}
+        } else if (results.code === "#SomeError") {
+            results = results
         } else {
             let $ = cheerio.load(results);
             results = []

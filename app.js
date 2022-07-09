@@ -103,6 +103,8 @@ app.get('/find/:search/:all', async (req, res) => {
     toLog += '\n=============\n=============\n'
     addToLogs(toLog)
 
+    if(goojaraResults.code === '#SomeError') goojaraResults = []
+
     res.json({code: "#Success", data: [...imdbResults, ...goojaraResults]})
 })
 
