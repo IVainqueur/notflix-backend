@@ -267,6 +267,9 @@ async function goojara_getseries(seriesURL) {
             let seasonBTNs = document.querySelector('.dflex').children;
             let seasons = Array.from(seasonBTNs).map(s => s.textContent);
             let seriesID = document.querySelector('#seon').getAttribute('data-id')
+            let posterURL = document.querySelector('.imrl img').src
+            let title = document.querySelector('.marl h1').textContent.trim()
+            let description = document.querySelector('.marl p').textContent.trim()
             console.log('reached here')
             let episodes = []
             for (let season of seasons) {
@@ -280,10 +283,10 @@ async function goojara_getseries(seriesURL) {
                     let results = []
                     for (let child of div.children) {
                         results.push({
-                            episodeNumber: child.querySelector('.seep .sea').textContent,
-                            episodeTitle: child.querySelector('.snfo h1').textContent,
-                            episodeDescription: child.querySelector('.snfo p').textContent,
-                            episodeReleaseData: child.querySelector('.snfo .date').textContent,
+                            episodeNumber: child.querySelector('.seep .sea').textContent.trim(),
+                            episodeTitle: child.querySelector('.snfo h1').textContent.trim(),
+                            episodeDescription: child.querySelector('.snfo p').textContent.trim(),
+                            episodeReleaseData: child.querySelector('.snfo .date').textContent.trim(),
                             episodeURL: child.querySelector('.snfo h1 a').href
                         })
                     }
@@ -297,7 +300,12 @@ async function goojara_getseries(seriesURL) {
                 }
 
             }
-            return episodes
+            return {
+                title,
+                description,
+                posterURL,
+                seasons: episodes
+            }
 
         }, seriesURL)
         return result
