@@ -116,19 +116,12 @@ app.get('/watch/:service/:link', async (req, res) => {
     res.json({ code: "#Success", data: result })
 })
 
-app.get('/serie/:link', (req, res) => {
+app.get('/serie/:link', async (req, res) => {
     let { link } = req.params
-    // link = `https://ww1.goojara.to/${link}`
-    // let result = await goojara_getseries(link);
-    let results = require('./test.json')
-    res.send({
-        code: "#Success", data: {
-            title: "SpongeBob Squarepants",
-            description: "A kids show Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit quisquam minus aliquam odit delectus quas quibusdam corrupti corporis ab, perspiciatis, ex voluptas aut laudantium! Id maxime repudiandae eum dolorum? Fugit!",
-            posterURL: 'http://0.0.0.0/sponge.jpg',
-            seasons: [...results]
-        }
-    })
+    link = `https://ww1.goojara.to/${link}`
+    let result = await goojara_getseries(link);
+    // let results = require('./test.json')
+    res.send({code: "#Success", data: result})
 })
 
 const PORT = process.env.PORT || 8080
