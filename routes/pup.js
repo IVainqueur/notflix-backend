@@ -53,13 +53,13 @@ async function start() {
  * @returns {puppeteer.Browser} instance of puppeteer.Browser
  */
 async function launchBrowser() {
-    // return await puppeteer.launch({
-    //     args: [
-    //         '--no-sandbox',
-    //         '--disable-setuid-sandbox'
-    //     ]
-    // });
-    return await puppeteer.launch({ headless: false, defaultViewport: null });
+    return await puppeteer.launch({
+        args: [
+            '--no-sandbox',
+            '--disable-setuid-sandbox'
+        ]
+    });
+    // return await puppeteer.launch({ headless: false, defaultViewport: null });
 }
 
 
@@ -338,5 +338,6 @@ module.exports = {
     getFanFavourites,
     imdb_search,
     goojara_getmovie,
+    goojara_getseries,
     goojara_search
 }
