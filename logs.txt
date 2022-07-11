@@ -1,0 +1,680 @@
+GOOJARA STRING RECEIVED 
+<div class="lxbx"><ul class="mfeed"><li><a href="https://ww1.goojara.to/tKZ98y"><div class="it"><strong>Kung Fu Panda: Legends of Awesomeness</strong> (2011) </div></a></li><li><a href="https://ww1.goojara.to/m3jPWY"><div class="im"><strong>Kung Fu Panda</strong> (2008) </div></a></li><li><a href="https://ww1.goojara.to/m38pvE"><div class="im"><strong>Kung Fu Panda 2</strong> (2011) </div></a></li><li><a href="https://ww1.goojara.to/m37xg8"><div class="im"><strong>The Amazing Panda Adventure</strong> (1995) </div></a></li><li><a href="https://ww1.goojara.to/mRzkME"><div class="im"><strong>Kung Fu Panda: Secrets of the Masters</strong> (2011) </div></a></li><li><a href="https://ww1.goojara.to/m5Qggr"><div class="im"><strong>Kung Fu Panda 3</strong> (2016) </div></a></li></ul></div>GOOJARA STRING RECEIVED 
+<div class="lxbx"><ul class="mfeed"><li><a href="https://ww1.goojara.to/tKZ98y"><div class="it"><strong>Kung Fu Panda: Legends of Awesomeness</strong> (2011) </div></a></li><li><a href="https://ww1.goojara.to/m3jPWY"><div class="im"><strong>Kung Fu Panda</strong> (2008) </div></a></li><li><a href="https://ww1.goojara.to/m38pvE"><div class="im"><strong>Kung Fu Panda 2</strong> (2011) </div></a></li><li><a href="https://ww1.goojara.to/m37xg8"><div class="im"><strong>The Amazing Panda Adventure</strong> (1995) </div></a></li><li><a href="https://ww1.goojara.to/mRzkME"><div class="im"><strong>Kung Fu Panda: Secrets of the Masters</strong> (2011) </div></a></li><li><a href="https://ww1.goojara.to/m5Qggr"><div class="im"><strong>Kung Fu Panda 3</strong> (2016) </div></a></li></ul></div>11/07/2022, 17:44:38
+ SearchResults
+=================
+GOOJARA:
+[
+    {
+        "thumbnail": null,
+        "url": "https://ww1.goojara.to/tKZ98y",
+        "title": "Kung Fu Panda: Legends of Awesomeness",
+        "year": "2011",
+        "from": "GOOJARA",
+        "type": "series"
+    },
+    {
+        "thumbnail": null,
+        "url": "https://ww1.goojara.to/m3jPWY",
+        "title": "Kung Fu Panda",
+        "year": "2008",
+        "from": "GOOJARA",
+        "type": "movie"
+    },
+    {
+        "thumbnail": null,
+        "url": "https://ww1.goojara.to/m38pvE",
+        "title": "Kung Fu Panda 2",
+        "year": "2011",
+        "from": "GOOJARA",
+        "type": "movie"
+    },
+    {
+        "thumbnail": null,
+        "url": "https://ww1.goojara.to/m37xg8",
+        "title": "The Amazing Panda Adventure",
+        "year": "1995",
+        "from": "GOOJARA",
+        "type": "movie"
+    },
+    {
+        "thumbnail": null,
+        "url": "https://ww1.goojara.to/mRzkME",
+        "title": "Kung Fu Panda: Secrets of the Masters",
+        "year": "2011",
+        "from": "GOOJARA",
+        "type": "movie"
+    },
+    {
+        "thumbnail": null,
+        "url": "https://ww1.goojara.to/m5Qggr",
+        "title": "Kung Fu Panda 3",
+        "year": "2016",
+        "from": "GOOJARA",
+        "type": "movie"
+    }
+]
+ IMDB: 
+[
+    {
+        "thumbnail": "https://m.media-amazon.com/images/M/MV5BMTA5NTMxMjIzMDZeQTJeQWpwZ15BbWU3MDE3NzU2NTI@._V1_UX32_CR0,0,32,44_AL_.jpg",
+        "title": "The Watch",
+        "url": "https://imdb.com/title/tt1166118/?ref_=fn_al_tt_1",
+        "from": "IMDB"
+    },
+    {
+        "thumbnail": "https://m.media-amazon.com/images/M/MV5BZjAxY2UzNTItYmU0MC00NDVkLTliMzctNjRiNzU0MDk2MzQ1XkEyXkFqcGdeQXVyNjM1NDQwNzc@._V1_UY44_CR0,0,32,44_AL_.jpg",
+        "title": "Panda",
+        "url": "https://imdb.com/title/tt5652562/?ref_=fn_al_tt_2",
+        "from": "IMDB"
+    }
+]
+=============
+=============
+11/07/2022, 17:44:38
+ SearchResults
+=================
+GOOJARA:
+[
+    {
+        "thumbnail": null,
+        "url": "https://ww1.goojara.to/tKZ98y",
+        "title": "Kung Fu Panda: Legends of Awesomeness",
+        "year": "2011",
+        "from": "GOOJARA",
+        "type": "series"
+    },
+    {
+        "thumbnail": null,
+        "url": "https://ww1.goojara.to/m3jPWY",
+        "title": "Kung Fu Panda",
+        "year": "2008",
+        "from": "GOOJARA",
+        "type": "movie"
+    },
+    {
+        "thumbnail": null,
+        "url": "https://ww1.goojara.to/m38pvE",
+        "title": "Kung Fu Panda 2",
+        "year": "2011",
+        "from": "GOOJARA",
+        "type": "movie"
+    },
+    {
+        "thumbnail": null,
+        "url": "https://ww1.goojara.to/m37xg8",
+        "title": "The Amazing Panda Adventure",
+        "year": "1995",
+        "from": "GOOJARA",
+        "type": "movie"
+    },
+    {
+        "thumbnail": null,
+        "url": "https://ww1.goojara.to/mRzkME",
+        "title": "Kung Fu Panda: Secrets of the Masters",
+        "year": "2011",
+        "from": "GOOJARA",
+        "type": "movie"
+    },
+    {
+        "thumbnail": null,
+        "url": "https://ww1.goojara.to/m5Qggr",
+        "title": "Kung Fu Panda 3",
+        "year": "2016",
+        "from": "GOOJARA",
+        "type": "movie"
+    }
+]
+ IMDB: 
+[
+    {
+        "thumbnail": "https://m.media-amazon.com/images/M/MV5BMTA5NTMxMjIzMDZeQTJeQWpwZ15BbWU3MDE3NzU2NTI@._V1_UX32_CR0,0,32,44_AL_.jpg",
+        "title": "The Watch",
+        "url": "https://imdb.com/title/tt1166118/?ref_=fn_al_tt_1",
+        "from": "IMDB"
+    },
+    {
+        "thumbnail": "https://m.media-amazon.com/images/M/MV5BZjAxY2UzNTItYmU0MC00NDVkLTliMzctNjRiNzU0MDk2MzQ1XkEyXkFqcGdeQXVyNjM1NDQwNzc@._V1_UY44_CR0,0,32,44_AL_.jpg",
+        "title": "Panda",
+        "url": "https://imdb.com/title/tt5652562/?ref_=fn_al_tt_2",
+        "from": "IMDB"
+    }
+]
+=============
+=============
+GOOJARA STRING RECEIVED 
+<div class="lxbx"><ul class="mfeed"><li><a href="https://ww1.goojara.to/tKZ98y"><div class="it"><strong>Kung Fu Panda: Legends of Awesomeness</strong> (2011) </div></a></li><li><a href="https://ww1.goojara.to/m3jPWY"><div class="im"><strong>Kung Fu Panda</strong> (2008) </div></a></li><li><a href="https://ww1.goojara.to/m38pvE"><div class="im"><strong>Kung Fu Panda 2</strong> (2011) </div></a></li><li><a href="https://ww1.goojara.to/m37xg8"><div class="im"><strong>The Amazing Panda Adventure</strong> (1995) </div></a></li><li><a href="https://ww1.goojara.to/mRzkME"><div class="im"><strong>Kung Fu Panda: Secrets of the Masters</strong> (2011) </div></a></li><li><a href="https://ww1.goojara.to/m5Qggr"><div class="im"><strong>Kung Fu Panda 3</strong> (2016) </div></a></li></ul></div>GOOJARA STRING RECEIVED 
+<div class="lxbx"><ul class="mfeed"><li><a href="https://ww1.goojara.to/tKZ98y"><div class="it"><strong>Kung Fu Panda: Legends of Awesomeness</strong> (2011) </div></a></li><li><a href="https://ww1.goojara.to/m3jPWY"><div class="im"><strong>Kung Fu Panda</strong> (2008) </div></a></li><li><a href="https://ww1.goojara.to/m38pvE"><div class="im"><strong>Kung Fu Panda 2</strong> (2011) </div></a></li><li><a href="https://ww1.goojara.to/m37xg8"><div class="im"><strong>The Amazing Panda Adventure</strong> (1995) </div></a></li><li><a href="https://ww1.goojara.to/mRzkME"><div class="im"><strong>Kung Fu Panda: Secrets of the Masters</strong> (2011) </div></a></li><li><a href="https://ww1.goojara.to/m5Qggr"><div class="im"><strong>Kung Fu Panda 3</strong> (2016) </div></a></li></ul></div>11/07/2022, 17:57:04
+ SearchResults
+=================
+GOOJARA:
+[
+    {
+        "thumbnail": null,
+        "url": "https://ww1.goojara.to/tKZ98y",
+        "title": "Kung Fu Panda: Legends of Awesomeness",
+        "year": "2011",
+        "from": "GOOJARA",
+        "type": "series"
+    },
+    {
+        "thumbnail": null,
+        "url": "https://ww1.goojara.to/m3jPWY",
+        "title": "Kung Fu Panda",
+        "year": "2008",
+        "from": "GOOJARA",
+        "type": "movie"
+    },
+    {
+        "thumbnail": null,
+        "url": "https://ww1.goojara.to/m38pvE",
+        "title": "Kung Fu Panda 2",
+        "year": "2011",
+        "from": "GOOJARA",
+        "type": "movie"
+    },
+    {
+        "thumbnail": null,
+        "url": "https://ww1.goojara.to/m37xg8",
+        "title": "The Amazing Panda Adventure",
+        "year": "1995",
+        "from": "GOOJARA",
+        "type": "movie"
+    },
+    {
+        "thumbnail": null,
+        "url": "https://ww1.goojara.to/mRzkME",
+        "title": "Kung Fu Panda: Secrets of the Masters",
+        "year": "2011",
+        "from": "GOOJARA",
+        "type": "movie"
+    },
+    {
+        "thumbnail": null,
+        "url": "https://ww1.goojara.to/m5Qggr",
+        "title": "Kung Fu Panda 3",
+        "year": "2016",
+        "from": "GOOJARA",
+        "type": "movie"
+    }
+]
+ IMDB: 
+[
+    {
+        "thumbnail": "https://m.media-amazon.com/images/M/MV5BMTA5NTMxMjIzMDZeQTJeQWpwZ15BbWU3MDE3NzU2NTI@._V1_UX32_CR0,0,32,44_AL_.jpg",
+        "title": "The Watch",
+        "url": "https://imdb.com/title/tt1166118/?ref_=fn_al_tt_1",
+        "from": "IMDB"
+    },
+    {
+        "thumbnail": "https://m.media-amazon.com/images/M/MV5BZjAxY2UzNTItYmU0MC00NDVkLTliMzctNjRiNzU0MDk2MzQ1XkEyXkFqcGdeQXVyNjM1NDQwNzc@._V1_UY44_CR0,0,32,44_AL_.jpg",
+        "title": "Panda",
+        "url": "https://imdb.com/title/tt5652562/?ref_=fn_al_tt_2",
+        "from": "IMDB"
+    }
+]
+=============
+=============
+11/07/2022, 17:57:04
+ SearchResults
+=================
+GOOJARA:
+[
+    {
+        "thumbnail": null,
+        "url": "https://ww1.goojara.to/tKZ98y",
+        "title": "Kung Fu Panda: Legends of Awesomeness",
+        "year": "2011",
+        "from": "GOOJARA",
+        "type": "series"
+    },
+    {
+        "thumbnail": null,
+        "url": "https://ww1.goojara.to/m3jPWY",
+        "title": "Kung Fu Panda",
+        "year": "2008",
+        "from": "GOOJARA",
+        "type": "movie"
+    },
+    {
+        "thumbnail": null,
+        "url": "https://ww1.goojara.to/m38pvE",
+        "title": "Kung Fu Panda 2",
+        "year": "2011",
+        "from": "GOOJARA",
+        "type": "movie"
+    },
+    {
+        "thumbnail": null,
+        "url": "https://ww1.goojara.to/m37xg8",
+        "title": "The Amazing Panda Adventure",
+        "year": "1995",
+        "from": "GOOJARA",
+        "type": "movie"
+    },
+    {
+        "thumbnail": null,
+        "url": "https://ww1.goojara.to/mRzkME",
+        "title": "Kung Fu Panda: Secrets of the Masters",
+        "year": "2011",
+        "from": "GOOJARA",
+        "type": "movie"
+    },
+    {
+        "thumbnail": null,
+        "url": "https://ww1.goojara.to/m5Qggr",
+        "title": "Kung Fu Panda 3",
+        "year": "2016",
+        "from": "GOOJARA",
+        "type": "movie"
+    }
+]
+ IMDB: 
+[
+    {
+        "thumbnail": "https://m.media-amazon.com/images/M/MV5BMTA5NTMxMjIzMDZeQTJeQWpwZ15BbWU3MDE3NzU2NTI@._V1_UX32_CR0,0,32,44_AL_.jpg",
+        "title": "The Watch",
+        "url": "https://imdb.com/title/tt1166118/?ref_=fn_al_tt_1",
+        "from": "IMDB"
+    },
+    {
+        "thumbnail": "https://m.media-amazon.com/images/M/MV5BZjAxY2UzNTItYmU0MC00NDVkLTliMzctNjRiNzU0MDk2MzQ1XkEyXkFqcGdeQXVyNjM1NDQwNzc@._V1_UY44_CR0,0,32,44_AL_.jpg",
+        "title": "Panda",
+        "url": "https://imdb.com/title/tt5652562/?ref_=fn_al_tt_2",
+        "from": "IMDB"
+    }
+]
+=============
+=============
+GOOJARA STRING RECEIVED 
+<div class="lxbx"><ul class="mfeed"><li><a href="https://ww1.goojara.to/moWaeX"><div class="im"><strong>Top Gun</strong> (1986) </div></a></li><li><a href="https://ww1.goojara.to/meQzga"><div class="im"><strong>Top Gunner</strong> (2020) </div></a></li><li><a href="https://ww1.goojara.to/tYNJNj"><div class="it"><strong>Top Chef Masters</strong> (2009) </div></a></li><li><a href="https://ww1.goojara.to/tYXlk2"><div class="it"><strong>Top Gear</strong> (2002) </div></a></li><li><a href="https://ww1.goojara.to/t3MeNJ"><div class="it"><strong>Top Chef</strong> (2006) </div></a></li><li><a href="https://ww1.goojara.to/t3mE26"><div class="it"><strong>Top Boy</strong> (2011) </div></a></li><li><a href="https://ww1.goojara.to/tKLr4E"><div class="it"><strong>Top Gear USA</strong> (2010) </div></a></li><li><a href="https://ww1.goojara.to/tYwe6X"><div class="it"><strong>Top of the Lake</strong> (2013) </div></a></li><li><a href="https://ww1.goojara.to/toVMPV"><div class="it"><strong>Top Chef Canada</strong> (2011) </div></a></li><li><a href="https://ww1.goojara.to/terB8m"><div class="it"><strong>Top Gear America</strong> (2017) </div></a></li><li><a href="https://ww1.goojara.to/tmw1gd"><div class="it"><strong>Top Gear America</strong> (2021) </div></a></li><li><a href="https://ww1.goojara.to/tgEgOa"><div class="it"><strong>Top Secret UFO Projects: Declassified</strong> (2021) </div></a></li><li><a href="https://ww1.goojara.to/m3llxM"><div class="im"><strong>Top Gear Apocalypse</strong> (2010) </div></a></li><li><a href="https://ww1.goojara.to/mo4eJv"><div class="im"><strong>Top Secret!</strong> (1984) </div></a></li><li><a href="https://ww1.goojara.to/m37aqm"><div class="im"><strong>Top Cat - Don Gato y su pandilla</strong> (2011) </div></a></li><li><a href="https://ww1.goojara.to/mYkp68"><div class="im"><strong>Top Dog</strong> (1995) </div></a></li><li><a href="https://ww1.goojara.to/mZD5jr"><div class="im"><strong>Top Dog</strong> (2014) </div></a></li><li><a href="https://ww1.goojara.to/mrABE0"><div class="im"><strong>Top Five</strong> (2014) </div></a></li><li><a href="https://ww1.goojara.to/mnkgxG"><div class="im"><strong>Top Coat Cash</strong> (2017) </div></a></li><li><a href="https://ww1.goojara.to/mabmXV"><div class="im"><strong>Top Gear: Apocalypse</strong> (2010) </div></a></li></ul></div>GOOJARA STRING RECEIVED 
+<div class="lxbx"><ul class="mfeed"><li><a href="https://ww1.goojara.to/moWaeX"><div class="im"><strong>Top Gun</strong> (1986) </div></a></li><li><a href="https://ww1.goojara.to/meQzga"><div class="im"><strong>Top Gunner</strong> (2020) </div></a></li><li><a href="https://ww1.goojara.to/tYNJNj"><div class="it"><strong>Top Chef Masters</strong> (2009) </div></a></li><li><a href="https://ww1.goojara.to/tYXlk2"><div class="it"><strong>Top Gear</strong> (2002) </div></a></li><li><a href="https://ww1.goojara.to/t3MeNJ"><div class="it"><strong>Top Chef</strong> (2006) </div></a></li><li><a href="https://ww1.goojara.to/t3mE26"><div class="it"><strong>Top Boy</strong> (2011) </div></a></li><li><a href="https://ww1.goojara.to/tKLr4E"><div class="it"><strong>Top Gear USA</strong> (2010) </div></a></li><li><a href="https://ww1.goojara.to/tYwe6X"><div class="it"><strong>Top of the Lake</strong> (2013) </div></a></li><li><a href="https://ww1.goojara.to/toVMPV"><div class="it"><strong>Top Chef Canada</strong> (2011) </div></a></li><li><a href="https://ww1.goojara.to/terB8m"><div class="it"><strong>Top Gear America</strong> (2017) </div></a></li><li><a href="https://ww1.goojara.to/tmw1gd"><div class="it"><strong>Top Gear America</strong> (2021) </div></a></li><li><a href="https://ww1.goojara.to/tgEgOa"><div class="it"><strong>Top Secret UFO Projects: Declassified</strong> (2021) </div></a></li><li><a href="https://ww1.goojara.to/m3llxM"><div class="im"><strong>Top Gear Apocalypse</strong> (2010) </div></a></li><li><a href="https://ww1.goojara.to/mo4eJv"><div class="im"><strong>Top Secret!</strong> (1984) </div></a></li><li><a href="https://ww1.goojara.to/m37aqm"><div class="im"><strong>Top Cat - Don Gato y su pandilla</strong> (2011) </div></a></li><li><a href="https://ww1.goojara.to/mYkp68"><div class="im"><strong>Top Dog</strong> (1995) </div></a></li><li><a href="https://ww1.goojara.to/mZD5jr"><div class="im"><strong>Top Dog</strong> (2014) </div></a></li><li><a href="https://ww1.goojara.to/mrABE0"><div class="im"><strong>Top Five</strong> (2014) </div></a></li><li><a href="https://ww1.goojara.to/mnkgxG"><div class="im"><strong>Top Coat Cash</strong> (2017) </div></a></li><li><a href="https://ww1.goojara.to/mabmXV"><div class="im"><strong>Top Gear: Apocalypse</strong> (2010) </div></a></li></ul></div>11/07/2022, 18:41:52
+ SearchResults
+=================
+GOOJARA:
+[
+    {
+        "thumbnail": null,
+        "url": "https://ww1.goojara.to/moWaeX",
+        "title": "Top Gun",
+        "year": "1986",
+        "from": "GOOJARA",
+        "type": "movie"
+    },
+    {
+        "thumbnail": null,
+        "url": "https://ww1.goojara.to/meQzga",
+        "title": "Top Gunner",
+        "year": "2020",
+        "from": "GOOJARA",
+        "type": "movie"
+    },
+    {
+        "thumbnail": null,
+        "url": "https://ww1.goojara.to/tYNJNj",
+        "title": "Top Chef Masters",
+        "year": "2009",
+        "from": "GOOJARA",
+        "type": "series"
+    },
+    {
+        "thumbnail": null,
+        "url": "https://ww1.goojara.to/tYXlk2",
+        "title": "Top Gear",
+        "year": "2002",
+        "from": "GOOJARA",
+        "type": "series"
+    },
+    {
+        "thumbnail": null,
+        "url": "https://ww1.goojara.to/t3MeNJ",
+        "title": "Top Chef",
+        "year": "2006",
+        "from": "GOOJARA",
+        "type": "series"
+    },
+    {
+        "thumbnail": null,
+        "url": "https://ww1.goojara.to/t3mE26",
+        "title": "Top Boy",
+        "year": "2011",
+        "from": "GOOJARA",
+        "type": "series"
+    },
+    {
+        "thumbnail": null,
+        "url": "https://ww1.goojara.to/tKLr4E",
+        "title": "Top Gear USA",
+        "year": "2010",
+        "from": "GOOJARA",
+        "type": "series"
+    },
+    {
+        "thumbnail": null,
+        "url": "https://ww1.goojara.to/tYwe6X",
+        "title": "Top of the Lake",
+        "year": "2013",
+        "from": "GOOJARA",
+        "type": "series"
+    },
+    {
+        "thumbnail": null,
+        "url": "https://ww1.goojara.to/toVMPV",
+        "title": "Top Chef Canada",
+        "year": "2011",
+        "from": "GOOJARA",
+        "type": "series"
+    },
+    {
+        "thumbnail": null,
+        "url": "https://ww1.goojara.to/terB8m",
+        "title": "Top Gear America",
+        "year": "2017",
+        "from": "GOOJARA",
+        "type": "series"
+    },
+    {
+        "thumbnail": null,
+        "url": "https://ww1.goojara.to/tmw1gd",
+        "title": "Top Gear America",
+        "year": "2021",
+        "from": "GOOJARA",
+        "type": "series"
+    },
+    {
+        "thumbnail": null,
+        "url": "https://ww1.goojara.to/tgEgOa",
+        "title": "Top Secret UFO Projects: Declassified",
+        "year": "2021",
+        "from": "GOOJARA",
+        "type": "series"
+    },
+    {
+        "thumbnail": null,
+        "url": "https://ww1.goojara.to/m3llxM",
+        "title": "Top Gear Apocalypse",
+        "year": "2010",
+        "from": "GOOJARA",
+        "type": "movie"
+    },
+    {
+        "thumbnail": null,
+        "url": "https://ww1.goojara.to/mo4eJv",
+        "title": "Top Secret!",
+        "year": "1984",
+        "from": "GOOJARA",
+        "type": "movie"
+    },
+    {
+        "thumbnail": null,
+        "url": "https://ww1.goojara.to/m37aqm",
+        "title": "Top Cat - Don Gato y su pandilla",
+        "year": "2011",
+        "from": "GOOJARA",
+        "type": "movie"
+    },
+    {
+        "thumbnail": null,
+        "url": "https://ww1.goojara.to/mYkp68",
+        "title": "Top Dog",
+        "year": "1995",
+        "from": "GOOJARA",
+        "type": "movie"
+    },
+    {
+        "thumbnail": null,
+        "url": "https://ww1.goojara.to/mZD5jr",
+        "title": "Top Dog",
+        "year": "2014",
+        "from": "GOOJARA",
+        "type": "movie"
+    },
+    {
+        "thumbnail": null,
+        "url": "https://ww1.goojara.to/mrABE0",
+        "title": "Top Five",
+        "year": "2014",
+        "from": "GOOJARA",
+        "type": "movie"
+    },
+    {
+        "thumbnail": null,
+        "url": "https://ww1.goojara.to/mnkgxG",
+        "title": "Top Coat Cash",
+        "year": "2017",
+        "from": "GOOJARA",
+        "type": "movie"
+    },
+    {
+        "thumbnail": null,
+        "url": "https://ww1.goojara.to/mabmXV",
+        "title": "Top Gear: Apocalypse",
+        "year": "2010",
+        "from": "GOOJARA",
+        "type": "movie"
+    }
+]
+ IMDB: 
+[
+    {
+        "thumbnail": "https://m.media-amazon.com/images/M/MV5BOWQwOTA1ZDQtNzk3Yi00ZmVmLWFiZGYtNjdjNThiYjJhNzRjXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_UX32_CR0,0,32,44_AL_.jpg",
+        "title": "Top Gun: Maverick",
+        "url": "https://imdb.com/title/tt1745960/?ref_=fn_al_tt_1",
+        "from": "IMDB"
+    },
+    {
+        "thumbnail": "https://m.media-amazon.com/images/M/MV5BY2NlZjQ3ZTAtMzcxZC00MGZhLWFhNTQtN2M4NDBjYzIyOWNlXkEyXkFqcGdeQXVyNTgyNTA4MjM@._V1_UX32_CR0,0,32,44_AL_.jpg",
+        "title": "Top Gun",
+        "url": "https://imdb.com/title/tt0092099/?ref_=fn_al_tt_2",
+        "from": "IMDB"
+    },
+    {
+        "thumbnail": "https://m.media-amazon.com/images/M/MV5BNTFiZTBiZGMtNzNmMy00NDZiLWE5MGEtZmZjN2I3NTQ3ZmExXkEyXkFqcGdeQXVyMTMxMTY0OTQ@._V1_UX32_CR0,0,32,44_AL_.jpg",
+        "title": "Top Gun",
+        "url": "https://imdb.com/title/tt0048734/?ref_=fn_al_tt_3",
+        "from": "IMDB"
+    },
+    {
+        "thumbnail": "https://m.media-amazon.com/images/M/MV5BMDQyMTE2ZGUtMzBmOC00MGE5LWE4NWItODBlYzYyZmJhYzZiXkEyXkFqcGdeQXVyOTg4NTQ2MTA@._V1_UX32_CR0,0,32,44_AL_.jpg",
+        "title": "Top Gunner",
+        "url": "https://imdb.com/title/tt12226808/?ref_=fn_al_tt_4",
+        "from": "IMDB"
+    }
+]
+=============
+=============
+11/07/2022, 18:41:52
+ SearchResults
+=================
+GOOJARA:
+[
+    {
+        "thumbnail": null,
+        "url": "https://ww1.goojara.to/moWaeX",
+        "title": "Top Gun",
+        "year": "1986",
+        "from": "GOOJARA",
+        "type": "movie"
+    },
+    {
+        "thumbnail": null,
+        "url": "https://ww1.goojara.to/meQzga",
+        "title": "Top Gunner",
+        "year": "2020",
+        "from": "GOOJARA",
+        "type": "movie"
+    },
+    {
+        "thumbnail": null,
+        "url": "https://ww1.goojara.to/tYNJNj",
+        "title": "Top Chef Masters",
+        "year": "2009",
+        "from": "GOOJARA",
+        "type": "series"
+    },
+    {
+        "thumbnail": null,
+        "url": "https://ww1.goojara.to/tYXlk2",
+        "title": "Top Gear",
+        "year": "2002",
+        "from": "GOOJARA",
+        "type": "series"
+    },
+    {
+        "thumbnail": null,
+        "url": "https://ww1.goojara.to/t3MeNJ",
+        "title": "Top Chef",
+        "year": "2006",
+        "from": "GOOJARA",
+        "type": "series"
+    },
+    {
+        "thumbnail": null,
+        "url": "https://ww1.goojara.to/t3mE26",
+        "title": "Top Boy",
+        "year": "2011",
+        "from": "GOOJARA",
+        "type": "series"
+    },
+    {
+        "thumbnail": null,
+        "url": "https://ww1.goojara.to/tKLr4E",
+        "title": "Top Gear USA",
+        "year": "2010",
+        "from": "GOOJARA",
+        "type": "series"
+    },
+    {
+        "thumbnail": null,
+        "url": "https://ww1.goojara.to/tYwe6X",
+        "title": "Top of the Lake",
+        "year": "2013",
+        "from": "GOOJARA",
+        "type": "series"
+    },
+    {
+        "thumbnail": null,
+        "url": "https://ww1.goojara.to/toVMPV",
+        "title": "Top Chef Canada",
+        "year": "2011",
+        "from": "GOOJARA",
+        "type": "series"
+    },
+    {
+        "thumbnail": null,
+        "url": "https://ww1.goojara.to/terB8m",
+        "title": "Top Gear America",
+        "year": "2017",
+        "from": "GOOJARA",
+        "type": "series"
+    },
+    {
+        "thumbnail": null,
+        "url": "https://ww1.goojara.to/tmw1gd",
+        "title": "Top Gear America",
+        "year": "2021",
+        "from": "GOOJARA",
+        "type": "series"
+    },
+    {
+        "thumbnail": null,
+        "url": "https://ww1.goojara.to/tgEgOa",
+        "title": "Top Secret UFO Projects: Declassified",
+        "year": "2021",
+        "from": "GOOJARA",
+        "type": "series"
+    },
+    {
+        "thumbnail": null,
+        "url": "https://ww1.goojara.to/m3llxM",
+        "title": "Top Gear Apocalypse",
+        "year": "2010",
+        "from": "GOOJARA",
+        "type": "movie"
+    },
+    {
+        "thumbnail": null,
+        "url": "https://ww1.goojara.to/mo4eJv",
+        "title": "Top Secret!",
+        "year": "1984",
+        "from": "GOOJARA",
+        "type": "movie"
+    },
+    {
+        "thumbnail": null,
+        "url": "https://ww1.goojara.to/m37aqm",
+        "title": "Top Cat - Don Gato y su pandilla",
+        "year": "2011",
+        "from": "GOOJARA",
+        "type": "movie"
+    },
+    {
+        "thumbnail": null,
+        "url": "https://ww1.goojara.to/mYkp68",
+        "title": "Top Dog",
+        "year": "1995",
+        "from": "GOOJARA",
+        "type": "movie"
+    },
+    {
+        "thumbnail": null,
+        "url": "https://ww1.goojara.to/mZD5jr",
+        "title": "Top Dog",
+        "year": "2014",
+        "from": "GOOJARA",
+        "type": "movie"
+    },
+    {
+        "thumbnail": null,
+        "url": "https://ww1.goojara.to/mrABE0",
+        "title": "Top Five",
+        "year": "2014",
+        "from": "GOOJARA",
+        "type": "movie"
+    },
+    {
+        "thumbnail": null,
+        "url": "https://ww1.goojara.to/mnkgxG",
+        "title": "Top Coat Cash",
+        "year": "2017",
+        "from": "GOOJARA",
+        "type": "movie"
+    },
+    {
+        "thumbnail": null,
+        "url": "https://ww1.goojara.to/mabmXV",
+        "title": "Top Gear: Apocalypse",
+        "year": "2010",
+        "from": "GOOJARA",
+        "type": "movie"
+    }
+]
+ IMDB: 
+[
+    {
+        "thumbnail": "https://m.media-amazon.com/images/M/MV5BOWQwOTA1ZDQtNzk3Yi00ZmVmLWFiZGYtNjdjNThiYjJhNzRjXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_UX32_CR0,0,32,44_AL_.jpg",
+        "title": "Top Gun: Maverick",
+        "url": "https://imdb.com/title/tt1745960/?ref_=fn_al_tt_1",
+        "from": "IMDB"
+    },
+    {
+        "thumbnail": "https://m.media-amazon.com/images/M/MV5BY2NlZjQ3ZTAtMzcxZC00MGZhLWFhNTQtN2M4NDBjYzIyOWNlXkEyXkFqcGdeQXVyNTgyNTA4MjM@._V1_UX32_CR0,0,32,44_AL_.jpg",
+        "title": "Top Gun",
+        "url": "https://imdb.com/title/tt0092099/?ref_=fn_al_tt_2",
+        "from": "IMDB"
+    },
+    {
+        "thumbnail": "https://m.media-amazon.com/images/M/MV5BNTFiZTBiZGMtNzNmMy00NDZiLWE5MGEtZmZjN2I3NTQ3ZmExXkEyXkFqcGdeQXVyMTMxMTY0OTQ@._V1_UX32_CR0,0,32,44_AL_.jpg",
+        "title": "Top Gun",
+        "url": "https://imdb.com/title/tt0048734/?ref_=fn_al_tt_3",
+        "from": "IMDB"
+    },
+    {
+        "thumbnail": "https://m.media-amazon.com/images/M/MV5BMDQyMTE2ZGUtMzBmOC00MGE5LWE4NWItODBlYzYyZmJhYzZiXkEyXkFqcGdeQXVyOTg4NTQ2MTA@._V1_UX32_CR0,0,32,44_AL_.jpg",
+        "title": "Top Gunner",
+        "url": "https://imdb.com/title/tt12226808/?ref_=fn_al_tt_4",
+        "from": "IMDB"
+    }
+]
+=============
+=============
