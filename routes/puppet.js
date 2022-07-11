@@ -75,6 +75,7 @@ const getFanFavourites = async () => {
         let useragent = await page.evaluate(()=>{
             return window.navigator.userAgent
         })
+        console.log(useragent)
         addToLogs(`USERAGENT = ${useragent}`)
         await page.waitForSelector(CONTAINER)
         console.log('Found it');
