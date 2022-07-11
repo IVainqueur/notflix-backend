@@ -56,7 +56,8 @@ async function launchBrowser() {
     return await puppeteer.launch({
         args: [
             '--no-sandbox',
-            '--disable-setuid-sandbox'
+            '--disable-setuid-sandbox',
+            '--user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36'
         ]
     });
     // return await puppeteer.launch({ headless: false, defaultViewport: null });
@@ -150,7 +151,7 @@ const goojara_search = async (searchQuery) => {
         }, 500)
         console.log("NEW PAGE")
         const page = await context.newPage();
-        await page.setUserAgent(`Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36`)
+        // await page.setUserAgent(`Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36`)
         await page.setCacheEnabled(false)
         console.log("Going to GOOJARA")
         await page.setBypassCSP(true)
@@ -216,7 +217,7 @@ const goojara_search = async (searchQuery) => {
 async function goojara_getmovie(movieURL) {
     try {
         const page = await browser.newPage();
-        await page.setUserAgent(`Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36`)
+        // await page.setUserAgent(`Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36`)
         await page.goto(movieURL);
         try {
             await customWaitForSelector(page, '#vidcon iframe', { timeout: 15000 });
@@ -263,7 +264,7 @@ async function goojara_getseries(seriesURL) {
     try {
         console.log("Searching for ", seriesURL)
         const page = await browser.newPage();
-        await page.setUserAgent(`Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36`)
+        // await page.setUserAgent(`Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36`)
         await page.goto(seriesURL);
         let result = await page.evaluate(async (URL) => {
             console.log("TEST")
