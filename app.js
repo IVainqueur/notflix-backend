@@ -60,7 +60,7 @@ app.get('/fan-favorites', async (req, res) => {
     req.on('close', () => {
         console.log('\x1B[31m\x1B[1m[WARNING]: Request closed\x1B[0m')
     })
-    let today = Date.parse((new Date()).toLocaleDateString('en-UK', { timeZone: 'Africa/Harare' }))
+    let today = Date.parse((new Date()).toLocaleDateString('en-US', { timeZone: 'Africa/Harare' }))
 
     let todaysResults = await Daily.findOne({ day: { '$eq': today } })
     if (todaysResults) return res.json({ code: "#Success", data: todaysResults.fanFavs });
