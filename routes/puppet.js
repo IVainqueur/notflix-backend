@@ -69,6 +69,7 @@ async function launchBrowser() {
  * @returns {FanFavs} an Array of today's fan favorite shows and movies from IMDb
  */
 const getFanFavourites = async () => {
+    console.log("Called this function")
     try {
         const page = await browser.newPage()
         await page.goto('https://imdb.com')
