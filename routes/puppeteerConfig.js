@@ -1,4 +1,4 @@
 module.exports = {
-    fanFavContainer: `#__next > main > div > div.ipc-page-content-container.ipc-page-content-container--center.sc-acd9452-1.ljuFCE > div:nth-child(3) > section:nth-child(5) > div > div > div > div > div.ipc-sub-grid.ipc-sub-grid--page-span-3.ipc-sub-grid--nowrap.ipc-shoveler__grid`,
+    fanFavContainer: `#__next > main > div > div.ipc-page-content-container.ipc-page-content-container--center.sc-35db1433-1.hrRSbd > div:nth-child(3) > section:nth-child(5) > div > div.sc-e3008202-0.bfuSqT > div > div > div.ipc-sub-grid.ipc-sub-grid--page-span-3.ipc-sub-grid--nowrap.ipc-sub-grid--4-unit-at-s.ipc-shoveler__grid`,
     streamingContainer: `#__next > main > div > div.ipc-page-content-container.ipc-page-content-container--center.sc-acd9452-1.ljuFCE > div:nth-child(6) > section > div > div > div > div:nth-child(2) > div > div.ipc-sub-grid.ipc-sub-grid--page-span-3.ipc-sub-grid--nowrap.ipc-sub-grid--4-unit-at-s.ipc-shoveler__grid`
 }
