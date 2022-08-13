@@ -53,13 +53,13 @@ async function start() {
  * @returns {puppeteer.Browser} instance of puppeteer.Browser
  */
 async function launchBrowser() {
-    return await puppeteer.launch({
-        args: [
-            '--no-sandbox',
-            '--disable-setuid-sandbox',
-            '--user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36'
-        ]
-    });
+    // return await puppeteer.launch({
+    //     args: [
+    //         '--no-sandbox',
+    //         '--disable-setuid-sandbox',
+    //         '--user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36'
+    //     ]
+    // });
     return await puppeteer.launch({ headless: false, defaultViewport: null });
 }
 
@@ -272,11 +272,12 @@ async function goojara_getmovie(movieURL) {
             return document.querySelector('#video-container video').src;
         })
 
-        // console.log("VID_URL: ", videoURL);
+        await page.close()
         return { videoURL, posterURL, description: text, movieTitle }
 
 
     } catch (e) {
+        await page.close()
         return { code: "#Error", message: e.message }
     }
 }
@@ -333,8 +334,10 @@ async function goojara_getseries(seriesURL) {
             }
 
         }, seriesURL)
+        await page.close()
         return result
     } catch (e) {
+        await page.close()
         return { code: "#Error", message: e.message }
     }
 }
