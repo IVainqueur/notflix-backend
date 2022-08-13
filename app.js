@@ -65,7 +65,7 @@ app.get('/fan-favorites', async (req, res) => {
     let todaysResults = await Daily.findOne({ day: { '$eq': today } })
     if (todaysResults) return res.json({ code: "#Success", data: todaysResults.fanFavs });
 
-    let results = await getFanFavourites();
+    let results = await getFanFavourites(req);
     if (results.code === "#Error") {
         console.log("Error occured")
         closed = true

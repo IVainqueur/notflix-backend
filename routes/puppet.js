@@ -69,13 +69,18 @@ async function launchBrowser() {
  * @returns {FanFavs} an Array of today's fan favorite shows and movies from IMDb
  */
 const getFanFavourites = async (req = null) => {
-    console.log("Called this function")
+    let quit = false
     try {
         const page = await browser.newPage()
         await page.goto('https://imdb.com')
         await page._client.send('Network.clearBrowserCookies');
+        if (req) {
+            req.on('disconnect', async () => {
+                quit = true;
+                await page.close()
+            })
+        }
 
-        
         // let useragent = await page.evaluate(()=>{
         //     return window.navigator.userAgent
         // })
@@ -302,7 +307,7 @@ async function goojara_getseries(seriesURL) {
                             episodeURL: child.querySelector('.snfo h1 a').href
                         })
                     }
-                    episodes.push ({
+                    episodes.push({
                         season,
                         episodes: results
                     })
