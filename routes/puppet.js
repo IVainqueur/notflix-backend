@@ -60,7 +60,7 @@ async function launchBrowser() {
             '--user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36'
         ]
     });
-    // return await puppeteer.launch({ headless: false, defaultViewport: null });
+    return await puppeteer.launch({ headless: false, defaultViewport: null });
 }
 
 
@@ -68,15 +68,27 @@ async function launchBrowser() {
  * Gets today's fan favorite movies and shows
  * @returns {FanFavs} an Array of today's fan favorite shows and movies from IMDb
  */
-const getFanFavourites = async () => {
+const getFanFavourites = async (req = null) => {
+    let quit = false
     try {
         const page = await browser.newPage()
+        if (req) {
+            console.log("ADDING THE LISTENER")
+            req.on('close', async () => {
+                quit = true;
+                await page.close()
+            })
+        }
         await page.goto('https://imdb.com')
-        let useragent = await page.evaluate(()=>{
-            return window.navigator.userAgent
+        // await page._client.send('Network.clearBrowserCookies');
+
+        let ls = await page.evaluate(()=>{
+            const ls = localStorage
+            localStorage.clear()
+            return ls
         })
-        console.log(useragent)
-        addToLogs(`USERAGENT = ${useragent}`)
+        // console.log(useragent)
+        // addToLogs(`USERAGENT = ${useragent}`)
         await page.waitForSelector(CONTAINER)
         console.log('Found it');
         let result = [];
@@ -95,9 +107,10 @@ const getFanFavourites = async () => {
         } catch (e) {
             console.log(`[ERROR]: `, e)
         }
-        page.close()
+        await page.close()
         return result
     } catch (e) {
+        await page.close()
         return { code: "#Error", message: e.message }
     }
 }
@@ -127,8 +140,11 @@ const imdb_search = async (searchQuery, all = false) => {
             let url = $(this).children('.result_text').eq(0).children().eq(0).attr('href')
             result.push({ thumbnail, title, url: `https://imdb.com${url}`, from: "IMDB" })
         })
+        await page.close()
+
         return result
     } catch (e) {
+        await page.close()
         return { code: "#Error", message: e.message }
     }
 
@@ -208,6 +224,7 @@ const goojara_search = async (searchQuery) => {
     } catch (e) {
         foundResult = true
         console.log("GOOJARA ERROR: ", e)
+        await page.close()
         return { code: "#Error", message: e.message }
     }
 }
@@ -223,6 +240,7 @@ async function goojara_getmovie(movieURL) {
         const page = await browser.newPage();
         // await page.setUserAgent(`Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36`)
         await page.goto(movieURL);
+        // await page.setDefaultNavigationTimeout(200);
         try {
             await customWaitForSelector(page, '#vidcon iframe', { timeout: 15000 });
         } catch (e) {
@@ -255,11 +273,12 @@ async function goojara_getmovie(movieURL) {
             return document.querySelector('#video-container video').src;
         })
 
-        // console.log("VID_URL: ", videoURL);
+        await page.close()
         return { videoURL, posterURL, description: text, movieTitle }
 
 
     } catch (e) {
+        // await page.close()
         return { code: "#Error", message: e.message }
     }
 }
@@ -298,7 +317,7 @@ async function goojara_getseries(seriesURL) {
                             episodeURL: child.querySelector('.snfo h1 a').href
                         })
                     }
-                    episodes.push ({
+                    episodes.push({
                         season,
                         episodes: results
                     })
@@ -316,8 +335,10 @@ async function goojara_getseries(seriesURL) {
             }
 
         }, seriesURL)
+        await page.close()
         return result
     } catch (e) {
+        // await page.close()
         return { code: "#Error", message: e.message }
     }
 }
