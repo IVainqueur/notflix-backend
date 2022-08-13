@@ -269,7 +269,7 @@ async function goojara_getmovie(movieURL) {
 
         // console.log("VID_URL: ", videoURL);
         return { videoURL, posterURL, description: text, movieTitle }
-
+        
 
     } catch (e) {
         return { code: "#Error", message: e.message }
