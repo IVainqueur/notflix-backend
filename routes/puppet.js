@@ -53,13 +53,13 @@ async function start() {
  * @returns {puppeteer.Browser} instance of puppeteer.Browser
  */
 async function launchBrowser() {
-    // return await puppeteer.launch({
-    //     args: [
-    //         '--no-sandbox',
-    //         '--disable-setuid-sandbox',
-    //         '--user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36'
-    //     ]
-    // });
+    return await puppeteer.launch({
+        args: [
+            '--no-sandbox',
+            '--disable-setuid-sandbox',
+            '--user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36'
+        ]
+    });
     return await puppeteer.launch({ headless: false, defaultViewport: null });
 }
 
@@ -107,9 +107,10 @@ const getFanFavourites = async (req = null) => {
         } catch (e) {
             console.log(`[ERROR]: `, e)
         }
-        page.close()
+        await page.close()
         return result
     } catch (e) {
+        await page.close()
         return { code: "#Error", message: e.message }
     }
 }
@@ -139,8 +140,11 @@ const imdb_search = async (searchQuery, all = false) => {
             let url = $(this).children('.result_text').eq(0).children().eq(0).attr('href')
             result.push({ thumbnail, title, url: `https://imdb.com${url}`, from: "IMDB" })
         })
+        await page.close()
+
         return result
     } catch (e) {
+        await page.close()
         return { code: "#Error", message: e.message }
     }
 
@@ -220,6 +224,7 @@ const goojara_search = async (searchQuery) => {
     } catch (e) {
         foundResult = true
         console.log("GOOJARA ERROR: ", e)
+        await page.close()
         return { code: "#Error", message: e.message }
     }
 }
@@ -269,7 +274,7 @@ async function goojara_getmovie(movieURL) {
 
         // console.log("VID_URL: ", videoURL);
         return { videoURL, posterURL, description: text, movieTitle }
-        
+
 
     } catch (e) {
         return { code: "#Error", message: e.message }
