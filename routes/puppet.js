@@ -240,6 +240,7 @@ async function goojara_getmovie(movieURL) {
         const page = await browser.newPage();
         // await page.setUserAgent(`Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36`)
         await page.goto(movieURL);
+        // await page.setDefaultNavigationTimeout(200);
         try {
             await customWaitForSelector(page, '#vidcon iframe', { timeout: 15000 });
         } catch (e) {
