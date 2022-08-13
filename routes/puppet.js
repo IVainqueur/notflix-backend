@@ -72,11 +72,11 @@ const getFanFavourites = async () => {
     try {
         const page = await browser.newPage()
         await page.goto('https://imdb.com')
-        let useragent = await page.evaluate(()=>{
-            return window.navigator.userAgent
-        })
-        console.log(useragent)
-        addToLogs(`USERAGENT = ${useragent}`)
+        // let useragent = await page.evaluate(()=>{
+        //     return window.navigator.userAgent
+        // })
+        // console.log(useragent)
+        // addToLogs(`USERAGENT = ${useragent}`)
         await page.waitForSelector(CONTAINER)
         console.log('Found it');
         let result = [];
