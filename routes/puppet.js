@@ -277,7 +277,7 @@ async function goojara_getmovie(movieURL) {
 
 
     } catch (e) {
-        await page.close()
+        // await page.close()
         return { code: "#Error", message: e.message }
     }
 }
@@ -337,7 +337,7 @@ async function goojara_getseries(seriesURL) {
         await page.close()
         return result
     } catch (e) {
-        await page.close()
+        // await page.close()
         return { code: "#Error", message: e.message }
     }
 }
