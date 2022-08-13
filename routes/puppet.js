@@ -73,7 +73,7 @@ const getFanFavourites = async (req = null) => {
     try {
         const page = await browser.newPage()
         await page.goto('https://imdb.com')
-        await page._client.send('Network.clearBrowserCookies');
+        // await page._client.send('Network.clearBrowserCookies');
         if (req) {
             req.on('disconnect', async () => {
                 quit = true;
@@ -81,10 +81,12 @@ const getFanFavourites = async (req = null) => {
             })
         }
 
-        let localSt = await page.evaluate(()=>{
-            return window.navigator.userAgent
+        let ls = await page.evaluate(()=>{
+            const ls = localStorage
+            localStorage.clear()
+            return ls
         })
-        // console.log(useragent)
+        console.log(useragent)
         // addToLogs(`USERAGENT = ${useragent}`)
         await page.waitForSelector(CONTAINER)
         console.log('Found it');
