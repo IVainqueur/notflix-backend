@@ -53,13 +53,13 @@ async function start() {
  * @returns {puppeteer.Browser} instance of puppeteer.Browser
  */
 async function launchBrowser() {
-    return await puppeteer.launch({
-        args: [
-            '--no-sandbox',
-            '--disable-setuid-sandbox',
-            '--user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36'
-        ]
-    });
+    // return await puppeteer.launch({
+    //     args: [
+    //         '--no-sandbox',
+    //         '--disable-setuid-sandbox',
+    //         '--user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36'
+    //     ]
+    // });
     return await puppeteer.launch({ headless: false, defaultViewport: null });
 }
 
@@ -75,7 +75,8 @@ const getFanFavourites = async (req = null) => {
         await page.goto('https://imdb.com')
         // await page._client.send('Network.clearBrowserCookies');
         if (req) {
-            req.on('disconnect', async () => {
+            console.log("ADDING THE LISTENER")
+            req.on('close', async () => {
                 quit = true;
                 await page.close()
             })
