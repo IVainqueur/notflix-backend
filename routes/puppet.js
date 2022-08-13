@@ -72,8 +72,6 @@ const getFanFavourites = async (req = null) => {
     let quit = false
     try {
         const page = await browser.newPage()
-        await page.goto('https://imdb.com')
-        // await page._client.send('Network.clearBrowserCookies');
         if (req) {
             console.log("ADDING THE LISTENER")
             req.on('close', async () => {
@@ -81,13 +79,15 @@ const getFanFavourites = async (req = null) => {
                 await page.close()
             })
         }
+        await page.goto('https://imdb.com')
+        // await page._client.send('Network.clearBrowserCookies');
 
         let ls = await page.evaluate(()=>{
             const ls = localStorage
             localStorage.clear()
             return ls
         })
-        console.log(useragent)
+        // console.log(useragent)
         // addToLogs(`USERAGENT = ${useragent}`)
         await page.waitForSelector(CONTAINER)
         console.log('Found it');
