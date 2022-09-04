@@ -82,7 +82,7 @@ const getFanFavourites = async (req = null) => {
         await page.goto('https://imdb.com')
         // await page._client.send('Network.clearBrowserCookies');
 
-        let ls = await page.evaluate(()=>{
+        let ls = await page.evaluate(() => {
             const ls = localStorage
             localStorage.clear()
             return ls
