@@ -70,8 +70,8 @@ async function launchBrowser() {
  */
 const getFanFavourites = async (req = null) => {
     let quit = false
+    const page = await browser.newPage()
     try {
-        const page = await browser.newPage()
         if (req) {
             console.log("ADDING THE LISTENER")
             req.on('close', async () => {
@@ -123,11 +123,11 @@ const getFanFavourites = async (req = null) => {
  * @returns {Array.<Movie>}
  */
 const imdb_search = async (searchQuery, all = false) => {
+    const page = await browser.newPage();
     try {
         searchQuery = 'q=' + searchQuery.toString() + `${all ? '&s=tt' : ''}`;
         let result = [];
 
-        const page = await browser.newPage();
         await page.goto(`https://imdb.com/find?${searchQuery}`);
 
         await page.waitForSelector('.findList');
@@ -236,8 +236,8 @@ const goojara_search = async (searchQuery) => {
  * @returns {Goojara_Movie_Info}
  */
 async function goojara_getmovie(movieURL) {
+    const page = await browser.newPage();
     try {
-        const page = await browser.newPage();
         // await page.setUserAgent(`Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36`)
         await page.goto(movieURL);
         // await page.setDefaultNavigationTimeout(200);
@@ -278,15 +278,15 @@ async function goojara_getmovie(movieURL) {
 
 
     } catch (e) {
-        // await page.close()
+        await page.close()
         return { code: "#Error", message: e.message }
     }
 }
 
 async function goojara_getseries(seriesURL) {
+    const page = await browser.newPage();
     try {
         console.log("Searching for ", seriesURL)
-        const page = await browser.newPage();
         // await page.setUserAgent(`Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36`)
         await page.goto(seriesURL);
         let result = await page.evaluate(async (URL) => {
@@ -338,7 +338,7 @@ async function goojara_getseries(seriesURL) {
         await page.close()
         return result
     } catch (e) {
-        // await page.close()
+        await page.close()
         return { code: "#Error", message: e.message }
     }
 }
