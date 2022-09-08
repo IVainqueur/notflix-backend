@@ -76,7 +76,7 @@ const getFanFavourites = async (req = null) => {
             console.log("ADDING THE LISTENER")
             req.on('close', async () => {
                 quit = true;
-                await page.close()
+                !page.isClosed() && await page.close()
             })
         }
         await page.goto('https://imdb.com')
@@ -107,10 +107,10 @@ const getFanFavourites = async (req = null) => {
         } catch (e) {
             console.log(`[ERROR]: `, e)
         }
-        await page.close()
+        !page.isClosed() && await page.close()
         return result
     } catch (e) {
-        await page.close()
+        !page.isClosed() && await page.close()
         return { code: "#Error", message: e.message }
     }
 }
@@ -140,11 +140,11 @@ const imdb_search = async (searchQuery, all = false) => {
             let url = $(this).children('.result_text').eq(0).children().eq(0).attr('href')
             result.push({ thumbnail, title, url: `https://imdb.com${url}`, from: "IMDB" })
         })
-        await page.close()
+        !page.isClosed() && await page.close()
 
         return result
     } catch (e) {
-        await page.close()
+        !page.isClosed() && await page.close()
         return { code: "#Error", message: e.message }
     }
 
@@ -219,12 +219,12 @@ const goojara_search = async (searchQuery) => {
             })
         }
         console.log("Found the GOOJARA Results")
-        await page.close();
+        !page.isClosed() && await page.close();
         return results
     } catch (e) {
         foundResult = true
         console.log("GOOJARA ERROR: ", e)
-        await page.close()
+        !page.isClosed() && await page.close()
         return { code: "#Error", message: e.message }
     }
 }
@@ -273,12 +273,12 @@ async function goojara_getmovie(movieURL) {
             return document.querySelector('#video-container video').src;
         })
 
-        await page.close()
+        !page.isClosed() && await page.close()
         return { videoURL, posterURL, description: text, movieTitle }
 
 
     } catch (e) {
-        await page.close()
+        !page.isClosed() && await page.close()
         return { code: "#Error", message: e.message }
     }
 }
@@ -335,10 +335,10 @@ async function goojara_getseries(seriesURL) {
             }
 
         }, seriesURL)
-        await page.close()
+        !page.isClosed() && await page.close()
         return result
     } catch (e) {
-        await page.close()
+        !page.isClosed() && await page.close()
         return { code: "#Error", message: e.message }
     }
 }
