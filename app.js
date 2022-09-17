@@ -11,6 +11,7 @@ const Daily = require('./models/ml-daily');
 
 const fs = require('fs')
 
+console.log(process.env.MONGO_URI)
 
 /* Connect to DB */
 mongo.connect(process.env.MONGO_URI, (err) => {
@@ -121,7 +122,7 @@ app.get('/serie/:link', async (req, res) => {
     link = `https://ww1.goojara.to/${link}`
     let result = await goojara_getseries(link);
     // let results = require('./test.json')
-    res.send({code: "#Success", data: result})
+    res.send({ code: "#Success", data: result })
 })
 
 const PORT = process.env.PORT || 8080
