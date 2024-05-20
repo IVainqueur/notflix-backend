@@ -54,6 +54,7 @@ async function start() {
  */
 async function launchBrowser() {
     return await puppeteer.launch({
+        executablePath: process.env.CHROMIUM_PATH,
         args: [
             '--no-sandbox',
             '--disable-setuid-sandbox',

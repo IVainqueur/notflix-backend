@@ -90,7 +90,8 @@ app.get('/find/:search/:all', async (req, res) => {
     let searchQuery = req.params.search;
     let all = req.params.all === 'true' ? true : false;
     let goojaraResults = await goojara_search(searchQuery);
-    let imdbResults = await imdb_search(searchQuery, all);
+    // let imdbResults = await imdb_search(searchQuery, all);
+    let imdbResults = [];
 
     console.log((Array.isArray(imdbResults) ? imdbResults.length : ''), (Array.isArray(goojaraResults) ? goojaraResults.length : ''))
 
